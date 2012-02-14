@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.huenei.exolgan.services.model.impl.ReservationModelImpl">
+		<attributes>
+			<id name="reservationId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="reservationTimestamp">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="reservationDuration" />
+			<basic name="companyName" />
+			<basic name="meetingRoom" />
+			<basic name="visitNames" />
+			<basic name="visitDocs" />
+			<transient name="primaryKey" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.huenei.exolgan.services.model.impl.ReservationImpl" name="Reservation">
+		<table name="EXO_Reservation" />
+		<attributes />
+	</entity>
+</entity-mappings>

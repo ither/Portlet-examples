@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<model-hints>
+	<model name="com.huenei.exolgan.services.model.Reservation">
+		<field name="reservationId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+        <field name="reservationTimestamp" type="Date">
+          <hint name="year-range-future">true</hint>
+          <hint name="show-time">true</hint>
+        </field>		
+		<field name="reservationDuration" type="long" />
+		<field name="companyName" type="String" />
+		<field name="meetingRoom" type="String" />
+		<field name="visitNames" type="String" />
+		<field name="visitDocs" type="String" />
+	</model>
+</model-hints>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.huenei.exolgan.services.model.Reservation" />
+	<class name="com.huenei.exolgan.services.model.impl.ReservationImpl" table="EXO_Reservation">
+		<cache usage="read-write" />
+		<id name="reservationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="reservationTimestamp" type="org.hibernate.type.TimestampType" />
+		<property name="reservationDuration" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="meetingRoom" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="visitNames" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="visitDocs" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
