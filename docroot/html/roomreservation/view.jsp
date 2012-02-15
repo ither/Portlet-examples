@@ -44,7 +44,7 @@
                />
 
     <aui:select name="meetingRoom">
-        <aui:option value="-1"><liferay-ui:message key="please-choose"/></aui:option>
+        <aui:option value=""><liferay-ui:message key="please-choose"/></aui:option>
         <% for(String opt: rooms) {%>
         <aui:option value="<%= opt %>"><%= opt %></aui:option>
         <%} %>
