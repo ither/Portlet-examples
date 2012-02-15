@@ -63,7 +63,7 @@ public class ActionUtil
     {
         boolean valid = true;
         
-        if (isBlank(reservation.getMeetingRoom()))
+        if (isBlank(reservation.getMeetingRoom()) || "-1".equals(reservation.getMeetingRoom()))
         {
             list.add("meeting-room-empty");
             valid = false;

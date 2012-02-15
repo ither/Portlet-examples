@@ -24,6 +24,11 @@
     id="reservation"
     type="com.huenei.exolgan.services.model.Reservation"
     scope="request"/>
+    
+<jsp:useBean 
+    id="rooms" 
+    type="java.lang.String[]"
+    scope="request"/>    
 
 <% Calendar now = CalendarFactoryUtil.getCalendar(); %>
 
@@ -37,6 +42,13 @@
                bean="<%= reservation %>"
                value="<%= now %>"
                />
+
+    <aui:select name="meetingRoom">
+        <aui:option value="-1"><liferay-ui:message key="please-choose"/></aui:option>
+        <% for(String opt: rooms) {%>
+        <aui:option value="<%= opt %>"><%= opt %></aui:option>
+        <%} %>
+    </aui:select>
                
     <aui:input name="reservationDuration"
                type="text" value="30"/>

@@ -37,6 +37,7 @@ public class RoomReservationPortlet extends GenericPortlet
     {
         Reservation reservation = new ReservationImpl();
         renderRequest.setAttribute("reservation", reservation);
+        renderRequest.setAttribute("rooms", new String[]{"R1", "R2", "R3"});
         include(viewJSP, renderRequest, renderResponse);
     }
 
@@ -54,9 +55,9 @@ public class RoomReservationPortlet extends GenericPortlet
             return;
         }
         
-            
-            
+        // envia el mail
         
+        SessionMessages.add(request, "reservationOk");                   
     }
     
     protected void include(String path, RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException
