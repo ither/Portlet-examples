@@ -13,6 +13,10 @@
 <% if (!themeDisplay.isSignedIn()) {%>
 
 <% } else { %>
+<liferay-ui:error key="meeting-room-empty" message="meeting-room-empty"/>
+<liferay-ui:error key="incomplete-data" message="incomplete-data"/>
+<liferay-ui:error key="names-mismatch" message="names-mismatch"/>
+
 
 <portlet:actionURL name="processReservation" var="postURL"/>
 
