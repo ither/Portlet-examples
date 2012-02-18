@@ -101,12 +101,20 @@ public class ReservationWrapper implements Reservation {
 		_reservation.setReservationTimestamp(reservationTimestamp);
 	}
 
-	public long getReservationDuration() {
-		return _reservation.getReservationDuration();
+	public long getReservationDurationHour() {
+		return _reservation.getReservationDurationHour();
 	}
 
-	public void setReservationDuration(long reservationDuration) {
-		_reservation.setReservationDuration(reservationDuration);
+	public void setReservationDurationHour(long reservationDurationHour) {
+		_reservation.setReservationDurationHour(reservationDurationHour);
+	}
+
+	public long getReservationDurationMinute() {
+		return _reservation.getReservationDurationMinute();
+	}
+
+	public void setReservationDurationMinute(long reservationDurationMinute) {
+		_reservation.setReservationDurationMinute(reservationDurationMinute);
 	}
 
 	public java.lang.String getCompanyName() {
@@ -141,7 +149,7 @@ public class ReservationWrapper implements Reservation {
 		_reservation.setVisitDocs(visitDocs);
 	}
 
-	public Reservation toEscapedModel() {
+	public com.huenei.exolgan.services.model.Reservation toEscapedModel() {
 		return _reservation.toEscapedModel();
 	}
 
@@ -186,7 +194,8 @@ public class ReservationWrapper implements Reservation {
 		return _reservation.clone();
 	}
 
-	public int compareTo(Reservation reservation) {
+	public int compareTo(
+		com.huenei.exolgan.services.model.Reservation reservation) {
 		return _reservation.compareTo(reservation);
 	}
 

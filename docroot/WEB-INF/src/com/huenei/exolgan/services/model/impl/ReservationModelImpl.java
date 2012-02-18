@@ -66,13 +66,14 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 			{ "createDate", new Integer(Types.TIMESTAMP) },
 			{ "modifiedDate", new Integer(Types.TIMESTAMP) },
 			{ "reservationTimestamp", new Integer(Types.TIMESTAMP) },
-			{ "reservationDuration", new Integer(Types.BIGINT) },
+			{ "reservationDurationHour", new Integer(Types.BIGINT) },
+			{ "reservationDurationMinute", new Integer(Types.BIGINT) },
 			{ "companyName", new Integer(Types.VARCHAR) },
 			{ "meetingRoom", new Integer(Types.VARCHAR) },
 			{ "visitNames", new Integer(Types.VARCHAR) },
 			{ "visitDocs", new Integer(Types.VARCHAR) }
 		};
-	public static final String TABLE_SQL_CREATE = "create table EXO_Reservation (reservationId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,reservationTimestamp DATE null,reservationDuration LONG,companyName VARCHAR(75) null,meetingRoom VARCHAR(75) null,visitNames VARCHAR(75) null,visitDocs VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table EXO_Reservation (reservationId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,reservationTimestamp DATE null,reservationDurationHour LONG,reservationDurationMinute LONG,companyName VARCHAR(75) null,meetingRoom VARCHAR(75) null,visitNames VARCHAR(75) null,visitDocs VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table EXO_Reservation";
 	public static final String ORDER_BY_JPQL = " ORDER BY reservation.reservationTimestamp ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY EXO_Reservation.reservationTimestamp ASC";
@@ -172,12 +173,20 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 		_reservationTimestamp = reservationTimestamp;
 	}
 
-	public long getReservationDuration() {
-		return _reservationDuration;
+	public long getReservationDurationHour() {
+		return _reservationDurationHour;
 	}
 
-	public void setReservationDuration(long reservationDuration) {
-		_reservationDuration = reservationDuration;
+	public void setReservationDurationHour(long reservationDurationHour) {
+		_reservationDurationHour = reservationDurationHour;
+	}
+
+	public long getReservationDurationMinute() {
+		return _reservationDurationMinute;
+	}
+
+	public void setReservationDurationMinute(long reservationDurationMinute) {
+		_reservationDurationMinute = reservationDurationMinute;
 	}
 
 	public String getCompanyName() {
@@ -273,7 +282,9 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 
 		reservationImpl.setReservationTimestamp(getReservationTimestamp());
 
-		reservationImpl.setReservationDuration(getReservationDuration());
+		reservationImpl.setReservationDurationHour(getReservationDurationHour());
+
+		reservationImpl.setReservationDurationMinute(getReservationDurationMinute());
 
 		reservationImpl.setCompanyName(getCompanyName());
 
@@ -328,7 +339,7 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 	}
 
 	public String toString() {
-		StringBundler sb = new StringBundler(25);
+		StringBundler sb = new StringBundler(27);
 
 		sb.append("{reservationId=");
 		sb.append(getReservationId());
@@ -344,8 +355,10 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 		sb.append(getModifiedDate());
 		sb.append(", reservationTimestamp=");
 		sb.append(getReservationTimestamp());
-		sb.append(", reservationDuration=");
-		sb.append(getReservationDuration());
+		sb.append(", reservationDurationHour=");
+		sb.append(getReservationDurationHour());
+		sb.append(", reservationDurationMinute=");
+		sb.append(getReservationDurationMinute());
 		sb.append(", companyName=");
 		sb.append(getCompanyName());
 		sb.append(", meetingRoom=");
@@ -360,7 +373,7 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(40);
+		StringBundler sb = new StringBundler(43);
 
 		sb.append("<model><model-name>");
 		sb.append("com.huenei.exolgan.services.model.Reservation");
@@ -395,8 +408,12 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 		sb.append(getReservationTimestamp());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>reservationDuration</column-name><column-value><![CDATA[");
-		sb.append(getReservationDuration());
+			"<column><column-name>reservationDurationHour</column-name><column-value><![CDATA[");
+		sb.append(getReservationDurationHour());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>reservationDurationMinute</column-name><column-value><![CDATA[");
+		sb.append(getReservationDurationMinute());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>companyName</column-name><column-value><![CDATA[");
@@ -428,7 +445,8 @@ public class ReservationModelImpl extends BaseModelImpl<Reservation>
 	private Date _createDate;
 	private Date _modifiedDate;
 	private Date _reservationTimestamp;
-	private long _reservationDuration;
+	private long _reservationDurationHour;
+	private long _reservationDurationMinute;
 	private String _companyName;
 	private String _meetingRoom;
 	private String _visitNames;

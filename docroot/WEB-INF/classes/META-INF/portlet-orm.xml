@@ -22,7 +22,8 @@
 			<basic name="reservationTimestamp">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
-			<basic name="reservationDuration" />
+			<basic name="reservationDurationHour" />
+			<basic name="reservationDurationMinute" />
 			<basic name="companyName" />
 			<basic name="meetingRoom" />
 			<basic name="visitNames" />

@@ -8,11 +8,12 @@
 		<field name="userName" type="String" />
 		<field name="createDate" type="Date" />
 		<field name="modifiedDate" type="Date" />
-        <field name="reservationTimestamp" type="Date">
-          <hint name="year-range-future">true</hint>
-          <hint name="show-time">true</hint>
-        </field>		
-		<field name="reservationDuration" type="long" />
+		<field name="reservationTimestamp" type="Date">
+			<hint name="year-range-future">true</hint>
+			<hint name="show-time">true</hint>
+		</field>
+		<field name="reservationDurationHour" type="long" />
+		<field name="reservationDurationMinute" type="long" />
 		<field name="companyName" type="String" />
 		<field name="meetingRoom" type="String" />
 		<field name="visitNames" type="String" />

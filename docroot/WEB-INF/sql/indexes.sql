@@ -1,0 +1,1 @@
+create index IX_F42D5A35 on EXO_Reservation (meetingRoom, reservationTimestamp);

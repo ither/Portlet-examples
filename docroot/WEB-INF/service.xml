@@ -21,7 +21,8 @@
 		<!-- Other fields -->
         
         <column name="reservationTimestamp" type="Date"/>
-        <column name="reservationDuration" type="long"/>
+        <column name="reservationDurationHour" type="long"/>
+        <column name="reservationDurationMinute" type="long"/>
         <column name="companyName" type="String"/>
         <column name="meetingRoom" type="String"/>
         <column name="visitNames"  type="String"/>
@@ -32,6 +33,10 @@
 		<order by="asc">
 			<order-column name="reservationTimestamp" />
 		</order>
+        <finder name="roomOccupy" return-type="Collection">
+            <finder-column name="meetingRoom" comparator="="/>
+            <finder-column name="reservationTimestamp" comparator="LIKE"/>
+        </finder>
 
 	</entity>
 </service-builder>

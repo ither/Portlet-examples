@@ -14,7 +14,12 @@
 
 package com.huenei.exolgan.services.service.impl;
 
+import com.huenei.exolgan.services.model.Reservation;
 import com.huenei.exolgan.services.service.base.ReservationLocalServiceBaseImpl;
+import com.huenei.exolgan.services.service.persistence.ReservationPersistence;
+import com.huenei.exolgan.services.service.persistence.ReservationPersistenceImpl;
+import com.liferay.portal.kernel.exception.PortalException;
+import com.liferay.portal.kernel.exception.SystemException;
 
 /**
  * The implementation of the Reserva de salas local service.
@@ -35,5 +40,12 @@ import com.huenei.exolgan.services.service.base.ReservationLocalServiceBaseImpl;
  * @see com.huenei.exolgan.services.service.base.ReservationLocalServiceBaseImpl
  * @see com.huenei.exolgan.services.service.ReservationLocalServiceUtil
  */
-public class ReservationLocalServiceImpl extends ReservationLocalServiceBaseImpl {
+public class ReservationLocalServiceImpl extends ReservationLocalServiceBaseImpl 
+{
+    public Reservation addReservation(Reservation newRes, long userId) throws SystemException, PortalException
+    {
+        Reservation reservation = reservationPersistence.create(counterLocalService.increment(Reservation.class.getName()));
+        
+        return reservation;        
+    }
 }

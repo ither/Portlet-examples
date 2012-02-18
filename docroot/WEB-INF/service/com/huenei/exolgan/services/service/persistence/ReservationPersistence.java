@@ -102,6 +102,120 @@ public interface ReservationPersistence extends BasePersistence<Reservation> {
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
+	* Finds all the Reserva de salases where meetingRoom = &#63; and reservationTimestamp LIKE &#63;.
+	*
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @return the matching Reserva de salases
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<com.huenei.exolgan.services.model.Reservation> findByroomOccupy(
+		java.lang.String meetingRoom, java.util.Date reservationTimestamp)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Finds a range of all the Reserva de salases where meetingRoom = &#63; and reservationTimestamp LIKE &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @param start the lower bound of the range of Reserva de salases to return
+	* @param end the upper bound of the range of Reserva de salases to return (not inclusive)
+	* @return the range of matching Reserva de salases
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<com.huenei.exolgan.services.model.Reservation> findByroomOccupy(
+		java.lang.String meetingRoom, java.util.Date reservationTimestamp,
+		int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Finds an ordered range of all the Reserva de salases where meetingRoom = &#63; and reservationTimestamp LIKE &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @param start the lower bound of the range of Reserva de salases to return
+	* @param end the upper bound of the range of Reserva de salases to return (not inclusive)
+	* @param orderByComparator the comparator to order the results by
+	* @return the ordered range of matching Reserva de salases
+	* @throws SystemException if a system exception occurred
+	*/
+	public java.util.List<com.huenei.exolgan.services.model.Reservation> findByroomOccupy(
+		java.lang.String meetingRoom, java.util.Date reservationTimestamp,
+		int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Finds the first Reserva de salas in the ordered set where meetingRoom = &#63; and reservationTimestamp LIKE &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @param orderByComparator the comparator to order the set by
+	* @return the first matching Reserva de salas
+	* @throws com.huenei.exolgan.services.NoSuchReservationException if a matching Reserva de salas could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public com.huenei.exolgan.services.model.Reservation findByroomOccupy_First(
+		java.lang.String meetingRoom, java.util.Date reservationTimestamp,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.huenei.exolgan.services.NoSuchReservationException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Finds the last Reserva de salas in the ordered set where meetingRoom = &#63; and reservationTimestamp LIKE &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @param orderByComparator the comparator to order the set by
+	* @return the last matching Reserva de salas
+	* @throws com.huenei.exolgan.services.NoSuchReservationException if a matching Reserva de salas could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public com.huenei.exolgan.services.model.Reservation findByroomOccupy_Last(
+		java.lang.String meetingRoom, java.util.Date reservationTimestamp,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.huenei.exolgan.services.NoSuchReservationException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Finds the Reserva de salases before and after the current Reserva de salas in the ordered set where meetingRoom = &#63; and reservationTimestamp LIKE &#63;.
+	*
+	* <p>
+	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
+	* </p>
+	*
+	* @param reservationId the primary key of the current Reserva de salas
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @param orderByComparator the comparator to order the set by
+	* @return the previous, current, and next Reserva de salas
+	* @throws com.huenei.exolgan.services.NoSuchReservationException if a Reserva de salas with the primary key could not be found
+	* @throws SystemException if a system exception occurred
+	*/
+	public com.huenei.exolgan.services.model.Reservation[] findByroomOccupy_PrevAndNext(
+		long reservationId, java.lang.String meetingRoom,
+		java.util.Date reservationTimestamp,
+		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
+		throws com.huenei.exolgan.services.NoSuchReservationException,
+			com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* Finds all the Reserva de salases.
 	*
 	* @return the Reserva de salases
@@ -145,11 +259,34 @@ public interface ReservationPersistence extends BasePersistence<Reservation> {
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**
+	* Removes all the Reserva de salases where meetingRoom = &#63; and reservationTimestamp LIKE &#63; from the database.
+	*
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @throws SystemException if a system exception occurred
+	*/
+	public void removeByroomOccupy(java.lang.String meetingRoom,
+		java.util.Date reservationTimestamp)
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
 	* Removes all the Reserva de salases from the database.
 	*
 	* @throws SystemException if a system exception occurred
 	*/
 	public void removeAll()
+		throws com.liferay.portal.kernel.exception.SystemException;
+
+	/**
+	* Counts all the Reserva de salases where meetingRoom = &#63; and reservationTimestamp LIKE &#63;.
+	*
+	* @param meetingRoom the meeting room to search with
+	* @param reservationTimestamp the reservation timestamp to search with
+	* @return the number of matching Reserva de salases
+	* @throws SystemException if a system exception occurred
+	*/
+	public int countByroomOccupy(java.lang.String meetingRoom,
+		java.util.Date reservationTimestamp)
 		throws com.liferay.portal.kernel.exception.SystemException;
 
 	/**

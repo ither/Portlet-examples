@@ -172,18 +172,32 @@ public interface ReservationModel extends BaseModel<Reservation> {
 	public void setReservationTimestamp(Date reservationTimestamp);
 
 	/**
-	 * Gets the reservation duration of this Reserva de salas.
+	 * Gets the reservation duration hour of this Reserva de salas.
 	 *
-	 * @return the reservation duration of this Reserva de salas
+	 * @return the reservation duration hour of this Reserva de salas
 	 */
-	public long getReservationDuration();
+	public long getReservationDurationHour();
 
 	/**
-	 * Sets the reservation duration of this Reserva de salas.
+	 * Sets the reservation duration hour of this Reserva de salas.
 	 *
-	 * @param reservationDuration the reservation duration of this Reserva de salas
+	 * @param reservationDurationHour the reservation duration hour of this Reserva de salas
 	 */
-	public void setReservationDuration(long reservationDuration);
+	public void setReservationDurationHour(long reservationDurationHour);
+
+	/**
+	 * Gets the reservation duration minute of this Reserva de salas.
+	 *
+	 * @return the reservation duration minute of this Reserva de salas
+	 */
+	public long getReservationDurationMinute();
+
+	/**
+	 * Sets the reservation duration minute of this Reserva de salas.
+	 *
+	 * @param reservationDurationMinute the reservation duration minute of this Reserva de salas
+	 */
+	public void setReservationDurationMinute(long reservationDurationMinute);
 
 	/**
 	 * Gets the company name of this Reserva de salas.

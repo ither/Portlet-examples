@@ -5,8 +5,6 @@ import java.util.List;
 
 import javax.portlet.ActionRequest;
 
-import org.apache.commons.lang.StringUtils;
-
 import static org.apache.commons.lang.StringUtils.isBlank;
 import static org.apache.commons.lang.StringUtils.trim;
 import static org.apache.commons.lang.StringUtils.split;
@@ -37,7 +35,8 @@ public class ActionUtil
         result.setMeetingRoom(ParamUtil.getString(request, "meetingRoom"));
         result.setVisitNames(ParamUtil.getString(request, "visitNames"));
         result.setVisitDocs(ParamUtil.getString(request, "visitDocs"));
-        result.setReservationDuration(ParamUtil.getInteger(request, "reservationDuration"));
+        result.setReservationDurationHour(ParamUtil.getLong(request, "reservationDurationHour"));
+        result.setReservationDurationMinute(ParamUtil.getLong(request, "reservationDurationMinute"));
         
         int year = ParamUtil.getInteger(request,"reservationTimestampYear");
         int month = ParamUtil.getInteger(request, "reservationTimestampMonth");

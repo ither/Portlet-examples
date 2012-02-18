@@ -105,40 +105,47 @@ public class ClpSerializer {
 
 					method6.invoke(newModel, value6);
 
-					Method method7 = newModelClass.getMethod("setReservationDuration",
+					Method method7 = newModelClass.getMethod("setReservationDurationHour",
 							new Class[] { Long.TYPE });
 
-					Long value7 = new Long(oldCplModel.getReservationDuration());
+					Long value7 = new Long(oldCplModel.getReservationDurationHour());
 
 					method7.invoke(newModel, value7);
 
-					Method method8 = newModelClass.getMethod("setCompanyName",
-							new Class[] { String.class });
+					Method method8 = newModelClass.getMethod("setReservationDurationMinute",
+							new Class[] { Long.TYPE });
 
-					String value8 = oldCplModel.getCompanyName();
+					Long value8 = new Long(oldCplModel.getReservationDurationMinute());
 
 					method8.invoke(newModel, value8);
 
-					Method method9 = newModelClass.getMethod("setMeetingRoom",
+					Method method9 = newModelClass.getMethod("setCompanyName",
 							new Class[] { String.class });
 
-					String value9 = oldCplModel.getMeetingRoom();
+					String value9 = oldCplModel.getCompanyName();
 
 					method9.invoke(newModel, value9);
 
-					Method method10 = newModelClass.getMethod("setVisitNames",
+					Method method10 = newModelClass.getMethod("setMeetingRoom",
 							new Class[] { String.class });
 
-					String value10 = oldCplModel.getVisitNames();
+					String value10 = oldCplModel.getMeetingRoom();
 
 					method10.invoke(newModel, value10);
 
-					Method method11 = newModelClass.getMethod("setVisitDocs",
+					Method method11 = newModelClass.getMethod("setVisitNames",
 							new Class[] { String.class });
 
-					String value11 = oldCplModel.getVisitDocs();
+					String value11 = oldCplModel.getVisitNames();
 
 					method11.invoke(newModel, value11);
+
+					Method method12 = newModelClass.getMethod("setVisitDocs",
+							new Class[] { String.class });
+
+					String value12 = oldCplModel.getVisitDocs();
+
+					method12.invoke(newModel, value12);
 
 					return newModel;
 				}
@@ -239,39 +246,46 @@ public class ClpSerializer {
 					newModel.setReservationTimestamp(value6);
 
 					Method method7 = oldModelClass.getMethod(
-							"getReservationDuration");
+							"getReservationDurationHour");
 
 					Long value7 = (Long)method7.invoke(oldModel, (Object[])null);
 
-					newModel.setReservationDuration(value7);
+					newModel.setReservationDurationHour(value7);
 
-					Method method8 = oldModelClass.getMethod("getCompanyName");
+					Method method8 = oldModelClass.getMethod(
+							"getReservationDurationMinute");
 
-					String value8 = (String)method8.invoke(oldModel,
-							(Object[])null);
+					Long value8 = (Long)method8.invoke(oldModel, (Object[])null);
 
-					newModel.setCompanyName(value8);
+					newModel.setReservationDurationMinute(value8);
 
-					Method method9 = oldModelClass.getMethod("getMeetingRoom");
+					Method method9 = oldModelClass.getMethod("getCompanyName");
 
 					String value9 = (String)method9.invoke(oldModel,
 							(Object[])null);
 
-					newModel.setMeetingRoom(value9);
+					newModel.setCompanyName(value9);
 
-					Method method10 = oldModelClass.getMethod("getVisitNames");
+					Method method10 = oldModelClass.getMethod("getMeetingRoom");
 
 					String value10 = (String)method10.invoke(oldModel,
 							(Object[])null);
 
-					newModel.setVisitNames(value10);
+					newModel.setMeetingRoom(value10);
 
-					Method method11 = oldModelClass.getMethod("getVisitDocs");
+					Method method11 = oldModelClass.getMethod("getVisitNames");
 
 					String value11 = (String)method11.invoke(oldModel,
 							(Object[])null);
 
-					newModel.setVisitDocs(value11);
+					newModel.setVisitNames(value11);
+
+					Method method12 = oldModelClass.getMethod("getVisitDocs");
+
+					String value12 = (String)method12.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setVisitDocs(value12);
 
 					return newModel;
 				}

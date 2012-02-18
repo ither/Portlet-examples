@@ -111,12 +111,20 @@ public class ReservationClp extends BaseModelImpl<Reservation>
 		_reservationTimestamp = reservationTimestamp;
 	}
 
-	public long getReservationDuration() {
-		return _reservationDuration;
+	public long getReservationDurationHour() {
+		return _reservationDurationHour;
 	}
 
-	public void setReservationDuration(long reservationDuration) {
-		_reservationDuration = reservationDuration;
+	public void setReservationDurationHour(long reservationDurationHour) {
+		_reservationDurationHour = reservationDurationHour;
+	}
+
+	public long getReservationDurationMinute() {
+		return _reservationDurationMinute;
+	}
+
+	public void setReservationDurationMinute(long reservationDurationMinute) {
+		_reservationDurationMinute = reservationDurationMinute;
 	}
 
 	public String getCompanyName() {
@@ -172,7 +180,8 @@ public class ReservationClp extends BaseModelImpl<Reservation>
 		clone.setCreateDate(getCreateDate());
 		clone.setModifiedDate(getModifiedDate());
 		clone.setReservationTimestamp(getReservationTimestamp());
-		clone.setReservationDuration(getReservationDuration());
+		clone.setReservationDurationHour(getReservationDurationHour());
+		clone.setReservationDurationMinute(getReservationDurationMinute());
 		clone.setCompanyName(getCompanyName());
 		clone.setMeetingRoom(getMeetingRoom());
 		clone.setVisitNames(getVisitNames());
@@ -223,7 +232,7 @@ public class ReservationClp extends BaseModelImpl<Reservation>
 	}
 
 	public String toString() {
-		StringBundler sb = new StringBundler(25);
+		StringBundler sb = new StringBundler(27);
 
 		sb.append("{reservationId=");
 		sb.append(getReservationId());
@@ -239,8 +248,10 @@ public class ReservationClp extends BaseModelImpl<Reservation>
 		sb.append(getModifiedDate());
 		sb.append(", reservationTimestamp=");
 		sb.append(getReservationTimestamp());
-		sb.append(", reservationDuration=");
-		sb.append(getReservationDuration());
+		sb.append(", reservationDurationHour=");
+		sb.append(getReservationDurationHour());
+		sb.append(", reservationDurationMinute=");
+		sb.append(getReservationDurationMinute());
 		sb.append(", companyName=");
 		sb.append(getCompanyName());
 		sb.append(", meetingRoom=");
@@ -255,7 +266,7 @@ public class ReservationClp extends BaseModelImpl<Reservation>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(40);
+		StringBundler sb = new StringBundler(43);
 
 		sb.append("<model><model-name>");
 		sb.append("com.huenei.exolgan.services.model.Reservation");
@@ -290,8 +301,12 @@ public class ReservationClp extends BaseModelImpl<Reservation>
 		sb.append(getReservationTimestamp());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>reservationDuration</column-name><column-value><![CDATA[");
-		sb.append(getReservationDuration());
+			"<column><column-name>reservationDurationHour</column-name><column-value><![CDATA[");
+		sb.append(getReservationDurationHour());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>reservationDurationMinute</column-name><column-value><![CDATA[");
+		sb.append(getReservationDurationMinute());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>companyName</column-name><column-value><![CDATA[");
@@ -323,7 +338,8 @@ public class ReservationClp extends BaseModelImpl<Reservation>
 	private Date _createDate;
 	private Date _modifiedDate;
 	private Date _reservationTimestamp;
-	private long _reservationDuration;
+	private long _reservationDurationHour;
+	private long _reservationDurationMinute;
 	private String _companyName;
 	private String _meetingRoom;
 	private String _visitNames;

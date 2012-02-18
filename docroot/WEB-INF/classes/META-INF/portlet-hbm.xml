@@ -14,7 +14,8 @@
 		<property name="createDate" type="org.hibernate.type.TimestampType" />
 		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
 		<property name="reservationTimestamp" type="org.hibernate.type.TimestampType" />
-		<property name="reservationDuration" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="reservationDurationHour" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="reservationDurationMinute" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="companyName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="meetingRoom" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="visitNames" type="com.liferay.portal.dao.orm.hibernate.StringType" />
