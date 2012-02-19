@@ -14,6 +14,8 @@
 
 package com.huenei.exolgan.services.service;
 
+import com.huenei.exolgan.services.model.ProcessOrderClp;
+import com.huenei.exolgan.services.model.ProcessOrderDetailClp;
 import com.huenei.exolgan.services.model.ReservationClp;
 
 import com.liferay.portal.kernel.log.Log;
@@ -158,6 +160,163 @@ public class ClpSerializer {
 			}
 		}
 
+		if (oldModelClassName.equals(ProcessOrderClp.class.getName())) {
+			ProcessOrderClp oldCplModel = (ProcessOrderClp)oldModel;
+
+			ClassLoader contextClassLoader = Thread.currentThread()
+												   .getContextClassLoader();
+
+			try {
+				Thread.currentThread().setContextClassLoader(_classLoader);
+
+				try {
+					Class<?> newModelClass = Class.forName("com.huenei.exolgan.services.model.impl.ProcessOrderImpl",
+							true, _classLoader);
+
+					Object newModel = newModelClass.newInstance();
+
+					Method method0 = newModelClass.getMethod("setProcessOrderId",
+							new Class[] { Long.TYPE });
+
+					Long value0 = new Long(oldCplModel.getProcessOrderId());
+
+					method0.invoke(newModel, value0);
+
+					Method method1 = newModelClass.getMethod("setCompanyId",
+							new Class[] { Long.TYPE });
+
+					Long value1 = new Long(oldCplModel.getCompanyId());
+
+					method1.invoke(newModel, value1);
+
+					Method method2 = newModelClass.getMethod("setUserId",
+							new Class[] { Long.TYPE });
+
+					Long value2 = new Long(oldCplModel.getUserId());
+
+					method2.invoke(newModel, value2);
+
+					Method method3 = newModelClass.getMethod("setUserName",
+							new Class[] { String.class });
+
+					String value3 = oldCplModel.getUserName();
+
+					method3.invoke(newModel, value3);
+
+					Method method4 = newModelClass.getMethod("setCreateDate",
+							new Class[] { Date.class });
+
+					Date value4 = oldCplModel.getCreateDate();
+
+					method4.invoke(newModel, value4);
+
+					Method method5 = newModelClass.getMethod("setModifiedDate",
+							new Class[] { Date.class });
+
+					Date value5 = oldCplModel.getModifiedDate();
+
+					method5.invoke(newModel, value5);
+
+					Method method6 = newModelClass.getMethod("setCompanyName",
+							new Class[] { String.class });
+
+					String value6 = oldCplModel.getCompanyName();
+
+					method6.invoke(newModel, value6);
+
+					Method method7 = newModelClass.getMethod("setCompanyAddress",
+							new Class[] { String.class });
+
+					String value7 = oldCplModel.getCompanyAddress();
+
+					method7.invoke(newModel, value7);
+
+					Method method8 = newModelClass.getMethod("setCompanyContact",
+							new Class[] { String.class });
+
+					String value8 = oldCplModel.getCompanyContact();
+
+					method8.invoke(newModel, value8);
+
+					Method method9 = newModelClass.getMethod("setProcessOrderDescription",
+							new Class[] { String.class });
+
+					String value9 = oldCplModel.getProcessOrderDescription();
+
+					method9.invoke(newModel, value9);
+
+					Method method10 = newModelClass.getMethod("setProcessOrderFaliedBy",
+							new Class[] { String.class });
+
+					String value10 = oldCplModel.getProcessOrderFaliedBy();
+
+					method10.invoke(newModel, value10);
+
+					return newModel;
+				}
+				catch (Exception e) {
+					_log.error(e, e);
+				}
+			}
+			finally {
+				Thread.currentThread().setContextClassLoader(contextClassLoader);
+			}
+		}
+
+		if (oldModelClassName.equals(ProcessOrderDetailClp.class.getName())) {
+			ProcessOrderDetailClp oldCplModel = (ProcessOrderDetailClp)oldModel;
+
+			ClassLoader contextClassLoader = Thread.currentThread()
+												   .getContextClassLoader();
+
+			try {
+				Thread.currentThread().setContextClassLoader(_classLoader);
+
+				try {
+					Class<?> newModelClass = Class.forName("com.huenei.exolgan.services.model.impl.ProcessOrderDetailImpl",
+							true, _classLoader);
+
+					Object newModel = newModelClass.newInstance();
+
+					Method method0 = newModelClass.getMethod("setProcessDetailId",
+							new Class[] { Long.TYPE });
+
+					Long value0 = new Long(oldCplModel.getProcessDetailId());
+
+					method0.invoke(newModel, value0);
+
+					Method method1 = newModelClass.getMethod("setProcessDetailAmount",
+							new Class[] { Long.TYPE });
+
+					Long value1 = new Long(oldCplModel.getProcessDetailAmount());
+
+					method1.invoke(newModel, value1);
+
+					Method method2 = newModelClass.getMethod("setBankCheck",
+							new Class[] { String.class });
+
+					String value2 = oldCplModel.getBankCheck();
+
+					method2.invoke(newModel, value2);
+
+					Method method3 = newModelClass.getMethod("setBankCheckId",
+							new Class[] { String.class });
+
+					String value3 = oldCplModel.getBankCheckId();
+
+					method3.invoke(newModel, value3);
+
+					return newModel;
+				}
+				catch (Exception e) {
+					_log.error(e, e);
+				}
+			}
+			finally {
+				Thread.currentThread().setContextClassLoader(contextClassLoader);
+			}
+		}
+
 		return oldModel;
 	}
 
@@ -286,6 +445,155 @@ public class ClpSerializer {
 							(Object[])null);
 
 					newModel.setVisitDocs(value12);
+
+					return newModel;
+				}
+				catch (Exception e) {
+					_log.error(e, e);
+				}
+			}
+			finally {
+				Thread.currentThread().setContextClassLoader(contextClassLoader);
+			}
+		}
+
+		if (oldModelClassName.equals(
+					"com.huenei.exolgan.services.model.impl.ProcessOrderImpl")) {
+			ClassLoader contextClassLoader = Thread.currentThread()
+												   .getContextClassLoader();
+
+			try {
+				Thread.currentThread().setContextClassLoader(_classLoader);
+
+				try {
+					ProcessOrderClp newModel = new ProcessOrderClp();
+
+					Method method0 = oldModelClass.getMethod(
+							"getProcessOrderId");
+
+					Long value0 = (Long)method0.invoke(oldModel, (Object[])null);
+
+					newModel.setProcessOrderId(value0);
+
+					Method method1 = oldModelClass.getMethod("getCompanyId");
+
+					Long value1 = (Long)method1.invoke(oldModel, (Object[])null);
+
+					newModel.setCompanyId(value1);
+
+					Method method2 = oldModelClass.getMethod("getUserId");
+
+					Long value2 = (Long)method2.invoke(oldModel, (Object[])null);
+
+					newModel.setUserId(value2);
+
+					Method method3 = oldModelClass.getMethod("getUserName");
+
+					String value3 = (String)method3.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setUserName(value3);
+
+					Method method4 = oldModelClass.getMethod("getCreateDate");
+
+					Date value4 = (Date)method4.invoke(oldModel, (Object[])null);
+
+					newModel.setCreateDate(value4);
+
+					Method method5 = oldModelClass.getMethod("getModifiedDate");
+
+					Date value5 = (Date)method5.invoke(oldModel, (Object[])null);
+
+					newModel.setModifiedDate(value5);
+
+					Method method6 = oldModelClass.getMethod("getCompanyName");
+
+					String value6 = (String)method6.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setCompanyName(value6);
+
+					Method method7 = oldModelClass.getMethod(
+							"getCompanyAddress");
+
+					String value7 = (String)method7.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setCompanyAddress(value7);
+
+					Method method8 = oldModelClass.getMethod(
+							"getCompanyContact");
+
+					String value8 = (String)method8.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setCompanyContact(value8);
+
+					Method method9 = oldModelClass.getMethod(
+							"getProcessOrderDescription");
+
+					String value9 = (String)method9.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setProcessOrderDescription(value9);
+
+					Method method10 = oldModelClass.getMethod(
+							"getProcessOrderFaliedBy");
+
+					String value10 = (String)method10.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setProcessOrderFaliedBy(value10);
+
+					return newModel;
+				}
+				catch (Exception e) {
+					_log.error(e, e);
+				}
+			}
+			finally {
+				Thread.currentThread().setContextClassLoader(contextClassLoader);
+			}
+		}
+
+		if (oldModelClassName.equals(
+					"com.huenei.exolgan.services.model.impl.ProcessOrderDetailImpl")) {
+			ClassLoader contextClassLoader = Thread.currentThread()
+												   .getContextClassLoader();
+
+			try {
+				Thread.currentThread().setContextClassLoader(_classLoader);
+
+				try {
+					ProcessOrderDetailClp newModel = new ProcessOrderDetailClp();
+
+					Method method0 = oldModelClass.getMethod(
+							"getProcessDetailId");
+
+					Long value0 = (Long)method0.invoke(oldModel, (Object[])null);
+
+					newModel.setProcessDetailId(value0);
+
+					Method method1 = oldModelClass.getMethod(
+							"getProcessDetailAmount");
+
+					Long value1 = (Long)method1.invoke(oldModel, (Object[])null);
+
+					newModel.setProcessDetailAmount(value1);
+
+					Method method2 = oldModelClass.getMethod("getBankCheck");
+
+					String value2 = (String)method2.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setBankCheck(value2);
+
+					Method method3 = oldModelClass.getMethod("getBankCheckId");
+
+					String value3 = (String)method3.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setBankCheckId(value3);
 
 					return newModel;
 				}

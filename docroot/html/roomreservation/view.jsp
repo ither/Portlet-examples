@@ -24,7 +24,7 @@
 
 
 <% if (!themeDisplay.isSignedIn()) {%>
-<div class="portlet-msg-info"><liferay-ui:message key="not-logged-in"/></div>
+<div class="portlet-msg-info"><liferay-ui:message key="requires-login"/></div>
 <% } else { 
     Calendar now = CalendarFactoryUtil.getCalendar();
     long reservationDurationHour = BeanParamUtil.getLong(reservation, request, "reservationDurationHour");

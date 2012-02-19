@@ -19,4 +19,23 @@
 		<field name="visitNames" type="String" />
 		<field name="visitDocs" type="String" />
 	</model>
+	<model name="com.huenei.exolgan.services.model.ProcessOrder">
+		<field name="processOrderId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="companyName" type="String" />
+		<field name="companyAddress" type="String" />
+		<field name="companyContact" type="String" />
+		<field name="processOrderDescription" type="String" />
+		<field name="processOrderFaliedBy" type="String" />
+	</model>
+	<model name="com.huenei.exolgan.services.model.ProcessOrderDetail">
+		<field name="processDetailId" type="long" />
+		<field name="processDetailAmount" type="long" />
+		<field name="bankCheck" type="String" />
+		<field name="bankCheckId" type="String" />
+	</model>
 </model-hints>

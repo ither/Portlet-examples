@@ -17,7 +17,7 @@ import com.liferay.portal.kernel.util.WebKeys;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portal.util.PortalUtil;
 
-public class ActionUtil
+public class RoomActionUtil
 {
     static public Reservation reservationFromRequest(ActionRequest request)
     {

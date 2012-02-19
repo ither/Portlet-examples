@@ -2,7 +2,7 @@ package com.huenei.exolgan.portlets;
 
 import com.huenei.exolgan.services.model.Reservation;
 import com.huenei.exolgan.services.model.impl.ReservationImpl;
-import com.huenei.exolgan.util.ActionUtil;
+import com.huenei.exolgan.util.RoomActionUtil;
 
 import com.liferay.mail.service.MailServiceUtil;
 import com.liferay.portal.kernel.log.Log;
@@ -84,8 +84,8 @@ public class RoomReservationPortlet extends GenericPortlet
     {
         List<String> errors = new ArrayList<String>();
         
-        Reservation reservation = ActionUtil.reservationFromRequest(request);
-        if (!ActionUtil.validateReservation(reservation, errors))
+        Reservation reservation = RoomActionUtil.reservationFromRequest(request);
+        if (!RoomActionUtil.validateReservation(reservation, errors))
         {
             for (String err : errors)            
                 SessionErrors.add(request, err);

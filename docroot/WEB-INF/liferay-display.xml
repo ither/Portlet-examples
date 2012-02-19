@@ -4,5 +4,6 @@
 <display>
 	<category name="Exolgan">
 		<portlet id="roomreservation"></portlet>
+		<portlet id="processorder"></portlet>
 	</category>
 </display>

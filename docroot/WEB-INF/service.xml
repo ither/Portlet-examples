@@ -5,21 +5,15 @@
 	<namespace>EXO</namespace>
 
 	<entity name="Reservation" local-service="true" remote-service="false" human-name="Reserva de salas">
-
 		<!-- PK fields -->
-
 		<column name="reservationId" type="long" primary="true"/>
-
 		<!-- Audit fields -->
-
 		<column name="companyId" type="long" />
 		<column name="userId" type="long" />
 		<column name="userName" type="String" />
 		<column name="createDate" type="Date" />
 		<column name="modifiedDate" type="Date" />
-
-		<!-- Other fields -->
-        
+		<!-- Other fields -->       
         <column name="reservationTimestamp" type="Date"/>
         <column name="reservationDurationHour" type="long"/>
         <column name="reservationDurationMinute" type="long"/>
@@ -27,16 +21,44 @@
         <column name="meetingRoom" type="String"/>
         <column name="visitNames"  type="String"/>
         <column name="visitDocs"   type="String"/>
-
 		<!-- Order -->
-
 		<order by="asc">
 			<order-column name="reservationTimestamp" />
 		</order>
+		<!-- Finders -->
         <finder name="roomOccupy" return-type="Collection">
             <finder-column name="meetingRoom" comparator="="/>
             <finder-column name="reservationTimestamp" comparator="LIKE"/>
         </finder>
-
 	</entity>
+	
+    <entity name="ProcessOrder" local-service="true" remote-service="false" human-name="Tramite">
+        <!-- PK fields -->
+        <column name="processOrderId" type="long" primary="true"/>
+        <!-- Audit fields -->
+        <column name="companyId" type="long" />
+        <column name="userId" type="long" />
+        <column name="userName" type="String" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+        <!-- Other fields -->                        
+        <column name="companyName" type="String"/>
+        <column name="companyAddress" type="String"/>
+        <column name="companyContact" type="String"/>
+        <column name="processOrderDescription" type="String"/>
+        <column name="processOrderFaliedBy" type="String"/>
+        <column name="details" 
+                type="Collection" 
+                mapping-key="processDetailId" 
+                entity="ProcessOrderDetail"/>
+    </entity>
+    
+    <entity name="ProcessOrderDetail" local-service="true" remote-service="false" human-name="Tramite-Detalle">
+        <!-- PK fields -->    
+        <column name="processDetailId" type="long" primary="true"/>
+        <!-- FK fields -->        
+        <column name="processDetailAmount" type="long"/>
+        <column name="bankCheck" type="String"/>
+        <column name="bankCheckId" type="String"/>
+    </entity>	
 </service-builder>

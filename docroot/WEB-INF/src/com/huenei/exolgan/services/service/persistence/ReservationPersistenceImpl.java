@@ -1068,6 +1068,10 @@ public class ReservationPersistenceImpl extends BasePersistenceImpl<Reservation>
 
 	@BeanReference(type = ReservationPersistence.class)
 	protected ReservationPersistence reservationPersistence;
+	@BeanReference(type = ProcessOrderPersistence.class)
+	protected ProcessOrderPersistence processOrderPersistence;
+	@BeanReference(type = ProcessOrderDetailPersistence.class)
+	protected ProcessOrderDetailPersistence processOrderDetailPersistence;
 	@BeanReference(type = ResourcePersistence.class)
 	protected ResourcePersistence resourcePersistence;
 	@BeanReference(type = UserPersistence.class)

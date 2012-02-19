@@ -15,6 +15,8 @@
 package com.huenei.exolgan.services.service.messaging;
 
 import com.huenei.exolgan.services.service.ClpSerializer;
+import com.huenei.exolgan.services.service.ProcessOrderDetailLocalServiceUtil;
+import com.huenei.exolgan.services.service.ProcessOrderLocalServiceUtil;
 import com.huenei.exolgan.services.service.ReservationLocalServiceUtil;
 
 import com.liferay.portal.kernel.log.Log;
@@ -44,6 +46,10 @@ public class ClpMessageListener implements MessageListener {
 		if (command.equals("undeploy") &&
 				servletContextName.equals(SERVLET_CONTEXT_NAME)) {
 			ReservationLocalServiceUtil.clearService();
+
+			ProcessOrderLocalServiceUtil.clearService();
+
+			ProcessOrderDetailLocalServiceUtil.clearService();
 		}
 	}
 

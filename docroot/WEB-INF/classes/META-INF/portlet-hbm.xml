@@ -3,6 +3,8 @@
 
 <hibernate-mapping default-lazy="false" auto-import="false">
 	<import class="com.huenei.exolgan.services.model.Reservation" />
+	<import class="com.huenei.exolgan.services.model.ProcessOrder" />
+	<import class="com.huenei.exolgan.services.model.ProcessOrderDetail" />
 	<class name="com.huenei.exolgan.services.model.impl.ReservationImpl" table="EXO_Reservation">
 		<cache usage="read-write" />
 		<id name="reservationId" type="long">
@@ -20,5 +22,30 @@
 		<property name="meetingRoom" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="visitNames" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="visitDocs" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.huenei.exolgan.services.model.impl.ProcessOrderImpl" table="EXO_ProcessOrder">
+		<cache usage="read-write" />
+		<id name="processOrderId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="companyName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="companyAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="companyContact" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="processOrderDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="processOrderFaliedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.huenei.exolgan.services.model.impl.ProcessOrderDetailImpl" table="EXO_ProcessOrderDetail">
+		<cache usage="read-write" />
+		<id name="processDetailId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="processDetailAmount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="bankCheck" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="bankCheckId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 </hibernate-mapping>

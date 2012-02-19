@@ -16,66 +16,66 @@ package com.huenei.exolgan.services.service;
 
 /**
  * <p>
- * This class is a wrapper for {@link ReservationLocalService}.
+ * This class is a wrapper for {@link ProcessOrderLocalService}.
  * </p>
  *
  * @author    prochas
- * @see       ReservationLocalService
+ * @see       ProcessOrderLocalService
  * @generated
  */
-public class ReservationLocalServiceWrapper implements ReservationLocalService {
-	public ReservationLocalServiceWrapper(
-		ReservationLocalService reservationLocalService) {
-		_reservationLocalService = reservationLocalService;
+public class ProcessOrderLocalServiceWrapper implements ProcessOrderLocalService {
+	public ProcessOrderLocalServiceWrapper(
+		ProcessOrderLocalService processOrderLocalService) {
+		_processOrderLocalService = processOrderLocalService;
 	}
 
 	/**
-	* Adds the Reserva de salas to the database. Also notifies the appropriate model listeners.
+	* Adds the Tramite to the database. Also notifies the appropriate model listeners.
 	*
-	* @param reservation the Reserva de salas to add
-	* @return the Reserva de salas that was added
+	* @param processOrder the Tramite to add
+	* @return the Tramite that was added
 	* @throws SystemException if a system exception occurred
 	*/
-	public com.huenei.exolgan.services.model.Reservation addReservation(
-		com.huenei.exolgan.services.model.Reservation reservation)
+	public com.huenei.exolgan.services.model.ProcessOrder addProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.addReservation(reservation);
+		return _processOrderLocalService.addProcessOrder(processOrder);
 	}
 
 	/**
-	* Creates a new Reserva de salas with the primary key. Does not add the Reserva de salas to the database.
+	* Creates a new Tramite with the primary key. Does not add the Tramite to the database.
 	*
-	* @param reservationId the primary key for the new Reserva de salas
-	* @return the new Reserva de salas
+	* @param processOrderId the primary key for the new Tramite
+	* @return the new Tramite
 	*/
-	public com.huenei.exolgan.services.model.Reservation createReservation(
-		long reservationId) {
-		return _reservationLocalService.createReservation(reservationId);
+	public com.huenei.exolgan.services.model.ProcessOrder createProcessOrder(
+		long processOrderId) {
+		return _processOrderLocalService.createProcessOrder(processOrderId);
 	}
 
 	/**
-	* Deletes the Reserva de salas with the primary key from the database. Also notifies the appropriate model listeners.
+	* Deletes the Tramite with the primary key from the database. Also notifies the appropriate model listeners.
 	*
-	* @param reservationId the primary key of the Reserva de salas to delete
-	* @throws PortalException if a Reserva de salas with the primary key could not be found
+	* @param processOrderId the primary key of the Tramite to delete
+	* @throws PortalException if a Tramite with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public void deleteReservation(long reservationId)
+	public void deleteProcessOrder(long processOrderId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		_reservationLocalService.deleteReservation(reservationId);
+		_processOrderLocalService.deleteProcessOrder(processOrderId);
 	}
 
 	/**
-	* Deletes the Reserva de salas from the database. Also notifies the appropriate model listeners.
+	* Deletes the Tramite from the database. Also notifies the appropriate model listeners.
 	*
-	* @param reservation the Reserva de salas to delete
+	* @param processOrder the Tramite to delete
 	* @throws SystemException if a system exception occurred
 	*/
-	public void deleteReservation(
-		com.huenei.exolgan.services.model.Reservation reservation)
+	public void deleteProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		_reservationLocalService.deleteReservation(reservation);
+		_processOrderLocalService.deleteProcessOrder(processOrder);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class ReservationLocalServiceWrapper implements ReservationLocalService {
 	public java.util.List dynamicQuery(
 		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.dynamicQuery(dynamicQuery);
+		return _processOrderLocalService.dynamicQuery(dynamicQuery);
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class ReservationLocalServiceWrapper implements ReservationLocalService {
 	public java.util.List dynamicQuery(
 		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery, int start,
 		int end) throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.dynamicQuery(dynamicQuery, start, end);
+		return _processOrderLocalService.dynamicQuery(dynamicQuery, start, end);
 	}
 
 	/**
@@ -132,7 +132,7 @@ public class ReservationLocalServiceWrapper implements ReservationLocalService {
 		int end,
 		com.liferay.portal.kernel.util.OrderByComparator orderByComparator)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.dynamicQuery(dynamicQuery, start, end,
+		return _processOrderLocalService.dynamicQuery(dynamicQuery, start, end,
 			orderByComparator);
 	}
 
@@ -146,90 +146,84 @@ public class ReservationLocalServiceWrapper implements ReservationLocalService {
 	public long dynamicQueryCount(
 		com.liferay.portal.kernel.dao.orm.DynamicQuery dynamicQuery)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.dynamicQueryCount(dynamicQuery);
+		return _processOrderLocalService.dynamicQueryCount(dynamicQuery);
 	}
 
 	/**
-	* Gets the Reserva de salas with the primary key.
+	* Gets the Tramite with the primary key.
 	*
-	* @param reservationId the primary key of the Reserva de salas to get
-	* @return the Reserva de salas
-	* @throws PortalException if a Reserva de salas with the primary key could not be found
+	* @param processOrderId the primary key of the Tramite to get
+	* @return the Tramite
+	* @throws PortalException if a Tramite with the primary key could not be found
 	* @throws SystemException if a system exception occurred
 	*/
-	public com.huenei.exolgan.services.model.Reservation getReservation(
-		long reservationId)
+	public com.huenei.exolgan.services.model.ProcessOrder getProcessOrder(
+		long processOrderId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.getReservation(reservationId);
+		return _processOrderLocalService.getProcessOrder(processOrderId);
 	}
 
 	/**
-	* Gets a range of all the Reserva de salases.
+	* Gets a range of all the Tramites.
 	*
 	* <p>
 	* Useful when paginating results. Returns a maximum of <code>end - start</code> instances. <code>start</code> and <code>end</code> are not primary keys, they are indexes in the result set. Thus, <code>0</code> refers to the first result in the set. Setting both <code>start</code> and <code>end</code> to {@link com.liferay.portal.kernel.dao.orm.QueryUtil#ALL_POS} will return the full result set.
 	* </p>
 	*
-	* @param start the lower bound of the range of Reserva de salases to return
-	* @param end the upper bound of the range of Reserva de salases to return (not inclusive)
-	* @return the range of Reserva de salases
+	* @param start the lower bound of the range of Tramites to return
+	* @param end the upper bound of the range of Tramites to return (not inclusive)
+	* @return the range of Tramites
 	* @throws SystemException if a system exception occurred
 	*/
-	public java.util.List<com.huenei.exolgan.services.model.Reservation> getReservations(
+	public java.util.List<com.huenei.exolgan.services.model.ProcessOrder> getProcessOrders(
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.getReservations(start, end);
+		return _processOrderLocalService.getProcessOrders(start, end);
 	}
 
 	/**
-	* Gets the number of Reserva de salases.
+	* Gets the number of Tramites.
 	*
-	* @return the number of Reserva de salases
+	* @return the number of Tramites
 	* @throws SystemException if a system exception occurred
 	*/
-	public int getReservationsCount()
+	public int getProcessOrdersCount()
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.getReservationsCount();
+		return _processOrderLocalService.getProcessOrdersCount();
 	}
 
 	/**
-	* Updates the Reserva de salas in the database. Also notifies the appropriate model listeners.
+	* Updates the Tramite in the database. Also notifies the appropriate model listeners.
 	*
-	* @param reservation the Reserva de salas to update
-	* @return the Reserva de salas that was updated
+	* @param processOrder the Tramite to update
+	* @return the Tramite that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	public com.huenei.exolgan.services.model.Reservation updateReservation(
-		com.huenei.exolgan.services.model.Reservation reservation)
+	public com.huenei.exolgan.services.model.ProcessOrder updateProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.updateReservation(reservation);
+		return _processOrderLocalService.updateProcessOrder(processOrder);
 	}
 
 	/**
-	* Updates the Reserva de salas in the database. Also notifies the appropriate model listeners.
+	* Updates the Tramite in the database. Also notifies the appropriate model listeners.
 	*
-	* @param reservation the Reserva de salas to update
-	* @param merge whether to merge the Reserva de salas with the current session. See {@link com.liferay.portal.service.persistence.BatchSession#update(com.liferay.portal.kernel.dao.orm.Session, com.liferay.portal.model.BaseModel, boolean)} for an explanation.
-	* @return the Reserva de salas that was updated
+	* @param processOrder the Tramite to update
+	* @param merge whether to merge the Tramite with the current session. See {@link com.liferay.portal.service.persistence.BatchSession#update(com.liferay.portal.kernel.dao.orm.Session, com.liferay.portal.model.BaseModel, boolean)} for an explanation.
+	* @return the Tramite that was updated
 	* @throws SystemException if a system exception occurred
 	*/
-	public com.huenei.exolgan.services.model.Reservation updateReservation(
-		com.huenei.exolgan.services.model.Reservation reservation, boolean merge)
+	public com.huenei.exolgan.services.model.ProcessOrder updateProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder,
+		boolean merge)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.updateReservation(reservation, merge);
+		return _processOrderLocalService.updateProcessOrder(processOrder, merge);
 	}
 
-	public com.huenei.exolgan.services.model.Reservation addReservation(
-		com.huenei.exolgan.services.model.Reservation newRes, long userId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		return _reservationLocalService.addReservation(newRes, userId);
+	public ProcessOrderLocalService getWrappedProcessOrderLocalService() {
+		return _processOrderLocalService;
 	}
 
-	public ReservationLocalService getWrappedReservationLocalService() {
-		return _reservationLocalService;
-	}
-
-	private ReservationLocalService _reservationLocalService;
+	private ProcessOrderLocalService _processOrderLocalService;
 }

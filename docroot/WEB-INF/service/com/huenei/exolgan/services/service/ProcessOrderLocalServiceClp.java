@@ -21,18 +21,18 @@ import com.liferay.portal.kernel.util.MethodKey;
 /**
  * @author prochas
  */
-public class ReservationLocalServiceClp implements ReservationLocalService {
-	public ReservationLocalServiceClp(ClassLoaderProxy classLoaderProxy) {
+public class ProcessOrderLocalServiceClp implements ProcessOrderLocalService {
+	public ProcessOrderLocalServiceClp(ClassLoaderProxy classLoaderProxy) {
 		_classLoaderProxy = classLoaderProxy;
 	}
 
-	public com.huenei.exolgan.services.model.Reservation addReservation(
-		com.huenei.exolgan.services.model.Reservation reservation)
+	public com.huenei.exolgan.services.model.ProcessOrder addProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
-		MethodHandler methodHandler = new MethodHandler(_addReservationMethodKey0,
-				reservation);
+		MethodHandler methodHandler = new MethodHandler(_addProcessOrderMethodKey0,
+				processOrder);
 
 		try {
 			returnObj = _classLoaderProxy.invoke(methodHandler);
@@ -51,15 +51,15 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 			}
 		}
 
-		return (com.huenei.exolgan.services.model.Reservation)ClpSerializer.translateOutput(returnObj);
+		return (com.huenei.exolgan.services.model.ProcessOrder)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public com.huenei.exolgan.services.model.Reservation createReservation(
-		long reservationId) {
+	public com.huenei.exolgan.services.model.ProcessOrder createProcessOrder(
+		long processOrderId) {
 		Object returnObj = null;
 
-		MethodHandler methodHandler = new MethodHandler(_createReservationMethodKey1,
-				reservationId);
+		MethodHandler methodHandler = new MethodHandler(_createProcessOrderMethodKey1,
+				processOrderId);
 
 		try {
 			returnObj = _classLoaderProxy.invoke(methodHandler);
@@ -74,14 +74,14 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 			}
 		}
 
-		return (com.huenei.exolgan.services.model.Reservation)ClpSerializer.translateOutput(returnObj);
+		return (com.huenei.exolgan.services.model.ProcessOrder)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public void deleteReservation(long reservationId)
+	public void deleteProcessOrder(long processOrderId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
-		MethodHandler methodHandler = new MethodHandler(_deleteReservationMethodKey2,
-				reservationId);
+		MethodHandler methodHandler = new MethodHandler(_deleteProcessOrderMethodKey2,
+				processOrderId);
 
 		try {
 			_classLoaderProxy.invoke(methodHandler);
@@ -105,11 +105,11 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 		}
 	}
 
-	public void deleteReservation(
-		com.huenei.exolgan.services.model.Reservation reservation)
+	public void deleteProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder)
 		throws com.liferay.portal.kernel.exception.SystemException {
-		MethodHandler methodHandler = new MethodHandler(_deleteReservationMethodKey3,
-				reservation);
+		MethodHandler methodHandler = new MethodHandler(_deleteProcessOrderMethodKey3,
+				processOrder);
 
 		try {
 			_classLoaderProxy.invoke(methodHandler);
@@ -246,14 +246,14 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 		return ((Long)returnObj).longValue();
 	}
 
-	public com.huenei.exolgan.services.model.Reservation getReservation(
-		long reservationId)
+	public com.huenei.exolgan.services.model.ProcessOrder getProcessOrder(
+		long processOrderId)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
-		MethodHandler methodHandler = new MethodHandler(_getReservationMethodKey8,
-				reservationId);
+		MethodHandler methodHandler = new MethodHandler(_getProcessOrderMethodKey8,
+				processOrderId);
 
 		try {
 			returnObj = _classLoaderProxy.invoke(methodHandler);
@@ -276,15 +276,15 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 			}
 		}
 
-		return (com.huenei.exolgan.services.model.Reservation)ClpSerializer.translateOutput(returnObj);
+		return (com.huenei.exolgan.services.model.ProcessOrder)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public java.util.List<com.huenei.exolgan.services.model.Reservation> getReservations(
+	public java.util.List<com.huenei.exolgan.services.model.ProcessOrder> getProcessOrders(
 		int start, int end)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
-		MethodHandler methodHandler = new MethodHandler(_getReservationsMethodKey9,
+		MethodHandler methodHandler = new MethodHandler(_getProcessOrdersMethodKey9,
 				start, end);
 
 		try {
@@ -304,14 +304,14 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 			}
 		}
 
-		return (java.util.List<com.huenei.exolgan.services.model.Reservation>)ClpSerializer.translateOutput(returnObj);
+		return (java.util.List<com.huenei.exolgan.services.model.ProcessOrder>)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public int getReservationsCount()
+	public int getProcessOrdersCount()
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
-		MethodHandler methodHandler = new MethodHandler(_getReservationsCountMethodKey10);
+		MethodHandler methodHandler = new MethodHandler(_getProcessOrdersCountMethodKey10);
 
 		try {
 			returnObj = _classLoaderProxy.invoke(methodHandler);
@@ -333,13 +333,13 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 		return ((Integer)returnObj).intValue();
 	}
 
-	public com.huenei.exolgan.services.model.Reservation updateReservation(
-		com.huenei.exolgan.services.model.Reservation reservation)
+	public com.huenei.exolgan.services.model.ProcessOrder updateProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
-		MethodHandler methodHandler = new MethodHandler(_updateReservationMethodKey11,
-				reservation);
+		MethodHandler methodHandler = new MethodHandler(_updateProcessOrderMethodKey11,
+				processOrder);
 
 		try {
 			returnObj = _classLoaderProxy.invoke(methodHandler);
@@ -358,16 +358,17 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 			}
 		}
 
-		return (com.huenei.exolgan.services.model.Reservation)ClpSerializer.translateOutput(returnObj);
+		return (com.huenei.exolgan.services.model.ProcessOrder)ClpSerializer.translateOutput(returnObj);
 	}
 
-	public com.huenei.exolgan.services.model.Reservation updateReservation(
-		com.huenei.exolgan.services.model.Reservation reservation, boolean merge)
+	public com.huenei.exolgan.services.model.ProcessOrder updateProcessOrder(
+		com.huenei.exolgan.services.model.ProcessOrder processOrder,
+		boolean merge)
 		throws com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
 
-		MethodHandler methodHandler = new MethodHandler(_updateReservationMethodKey12,
-				reservation, merge);
+		MethodHandler methodHandler = new MethodHandler(_updateProcessOrderMethodKey12,
+				processOrder, merge);
 
 		try {
 			returnObj = _classLoaderProxy.invoke(methodHandler);
@@ -386,40 +387,7 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 			}
 		}
 
-		return (com.huenei.exolgan.services.model.Reservation)ClpSerializer.translateOutput(returnObj);
-	}
-
-	public com.huenei.exolgan.services.model.Reservation addReservation(
-		com.huenei.exolgan.services.model.Reservation newRes, long userId)
-		throws com.liferay.portal.kernel.exception.PortalException,
-			com.liferay.portal.kernel.exception.SystemException {
-		Object returnObj = null;
-
-		MethodHandler methodHandler = new MethodHandler(_addReservationMethodKey13,
-				newRes, userId);
-
-		try {
-			returnObj = _classLoaderProxy.invoke(methodHandler);
-		}
-		catch (Throwable t) {
-			if (t instanceof com.liferay.portal.kernel.exception.PortalException) {
-				throw (com.liferay.portal.kernel.exception.PortalException)t;
-			}
-
-			if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
-				throw (com.liferay.portal.kernel.exception.SystemException)t;
-			}
-
-			if (t instanceof RuntimeException) {
-				throw (RuntimeException)t;
-			}
-			else {
-				throw new RuntimeException(t.getClass().getName() +
-					" is not a valid exception");
-			}
-		}
-
-		return (com.huenei.exolgan.services.model.Reservation)ClpSerializer.translateOutput(returnObj);
+		return (com.huenei.exolgan.services.model.ProcessOrder)ClpSerializer.translateOutput(returnObj);
 	}
 
 	public ClassLoaderProxy getClassLoaderProxy() {
@@ -427,16 +395,16 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 	}
 
 	private ClassLoaderProxy _classLoaderProxy;
-	private MethodKey _addReservationMethodKey0 = new MethodKey(_classLoaderProxy.getClassName(),
-			"addReservation",
-			com.huenei.exolgan.services.model.Reservation.class);
-	private MethodKey _createReservationMethodKey1 = new MethodKey(_classLoaderProxy.getClassName(),
-			"createReservation", long.class);
-	private MethodKey _deleteReservationMethodKey2 = new MethodKey(_classLoaderProxy.getClassName(),
-			"deleteReservation", long.class);
-	private MethodKey _deleteReservationMethodKey3 = new MethodKey(_classLoaderProxy.getClassName(),
-			"deleteReservation",
-			com.huenei.exolgan.services.model.Reservation.class);
+	private MethodKey _addProcessOrderMethodKey0 = new MethodKey(_classLoaderProxy.getClassName(),
+			"addProcessOrder",
+			com.huenei.exolgan.services.model.ProcessOrder.class);
+	private MethodKey _createProcessOrderMethodKey1 = new MethodKey(_classLoaderProxy.getClassName(),
+			"createProcessOrder", long.class);
+	private MethodKey _deleteProcessOrderMethodKey2 = new MethodKey(_classLoaderProxy.getClassName(),
+			"deleteProcessOrder", long.class);
+	private MethodKey _deleteProcessOrderMethodKey3 = new MethodKey(_classLoaderProxy.getClassName(),
+			"deleteProcessOrder",
+			com.huenei.exolgan.services.model.ProcessOrder.class);
 	private MethodKey _dynamicQueryMethodKey4 = new MethodKey(_classLoaderProxy.getClassName(),
 			"dynamicQuery", com.liferay.portal.kernel.dao.orm.DynamicQuery.class);
 	private MethodKey _dynamicQueryMethodKey5 = new MethodKey(_classLoaderProxy.getClassName(),
@@ -450,19 +418,16 @@ public class ReservationLocalServiceClp implements ReservationLocalService {
 	private MethodKey _dynamicQueryCountMethodKey7 = new MethodKey(_classLoaderProxy.getClassName(),
 			"dynamicQueryCount",
 			com.liferay.portal.kernel.dao.orm.DynamicQuery.class);
-	private MethodKey _getReservationMethodKey8 = new MethodKey(_classLoaderProxy.getClassName(),
-			"getReservation", long.class);
-	private MethodKey _getReservationsMethodKey9 = new MethodKey(_classLoaderProxy.getClassName(),
-			"getReservations", int.class, int.class);
-	private MethodKey _getReservationsCountMethodKey10 = new MethodKey(_classLoaderProxy.getClassName(),
-			"getReservationsCount");
-	private MethodKey _updateReservationMethodKey11 = new MethodKey(_classLoaderProxy.getClassName(),
-			"updateReservation",
-			com.huenei.exolgan.services.model.Reservation.class);
-	private MethodKey _updateReservationMethodKey12 = new MethodKey(_classLoaderProxy.getClassName(),
-			"updateReservation",
-			com.huenei.exolgan.services.model.Reservation.class, boolean.class);
-	private MethodKey _addReservationMethodKey13 = new MethodKey(_classLoaderProxy.getClassName(),
-			"addReservation",
-			com.huenei.exolgan.services.model.Reservation.class, long.class);
+	private MethodKey _getProcessOrderMethodKey8 = new MethodKey(_classLoaderProxy.getClassName(),
+			"getProcessOrder", long.class);
+	private MethodKey _getProcessOrdersMethodKey9 = new MethodKey(_classLoaderProxy.getClassName(),
+			"getProcessOrders", int.class, int.class);
+	private MethodKey _getProcessOrdersCountMethodKey10 = new MethodKey(_classLoaderProxy.getClassName(),
+			"getProcessOrdersCount");
+	private MethodKey _updateProcessOrderMethodKey11 = new MethodKey(_classLoaderProxy.getClassName(),
+			"updateProcessOrder",
+			com.huenei.exolgan.services.model.ProcessOrder.class);
+	private MethodKey _updateProcessOrderMethodKey12 = new MethodKey(_classLoaderProxy.getClassName(),
+			"updateProcessOrder",
+			com.huenei.exolgan.services.model.ProcessOrder.class, boolean.class);
 }

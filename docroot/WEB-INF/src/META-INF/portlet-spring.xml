@@ -6,4 +6,14 @@
 		<property name="service" ref="com.huenei.exolgan.services.service.ReservationLocalService" />
 	</bean>
 	<bean id="com.huenei.exolgan.services.service.persistence.ReservationPersistence" class="com.huenei.exolgan.services.service.persistence.ReservationPersistenceImpl" parent="basePersistence" />
+	<bean id="com.huenei.exolgan.services.service.ProcessOrderLocalService" class="com.huenei.exolgan.services.service.impl.ProcessOrderLocalServiceImpl" />
+	<bean id="com.huenei.exolgan.services.service.ProcessOrderLocalServiceUtil" class="com.huenei.exolgan.services.service.ProcessOrderLocalServiceUtil">
+		<property name="service" ref="com.huenei.exolgan.services.service.ProcessOrderLocalService" />
+	</bean>
+	<bean id="com.huenei.exolgan.services.service.persistence.ProcessOrderPersistence" class="com.huenei.exolgan.services.service.persistence.ProcessOrderPersistenceImpl" parent="basePersistence" />
+	<bean id="com.huenei.exolgan.services.service.ProcessOrderDetailLocalService" class="com.huenei.exolgan.services.service.impl.ProcessOrderDetailLocalServiceImpl" />
+	<bean id="com.huenei.exolgan.services.service.ProcessOrderDetailLocalServiceUtil" class="com.huenei.exolgan.services.service.ProcessOrderDetailLocalServiceUtil">
+		<property name="service" ref="com.huenei.exolgan.services.service.ProcessOrderDetailLocalService" />
+	</bean>
+	<bean id="com.huenei.exolgan.services.service.persistence.ProcessOrderDetailPersistence" class="com.huenei.exolgan.services.service.persistence.ProcessOrderDetailPersistenceImpl" parent="basePersistence" />
 </beans>
