@@ -50,6 +50,14 @@ public class ProcessOrderDetailClp extends BaseModelImpl<ProcessOrderDetail>
 		_processDetailId = processDetailId;
 	}
 
+	public long getProcessOrderId() {
+		return _processOrderId;
+	}
+
+	public void setProcessOrderId(long processOrderId) {
+		_processOrderId = processOrderId;
+	}
+
 	public long getProcessDetailAmount() {
 		return _processDetailAmount;
 	}
@@ -89,6 +97,7 @@ public class ProcessOrderDetailClp extends BaseModelImpl<ProcessOrderDetail>
 		ProcessOrderDetailClp clone = new ProcessOrderDetailClp();
 
 		clone.setProcessDetailId(getProcessDetailId());
+		clone.setProcessOrderId(getProcessOrderId());
 		clone.setProcessDetailAmount(getProcessDetailAmount());
 		clone.setBankCheck(getBankCheck());
 		clone.setBankCheckId(getBankCheckId());
@@ -139,10 +148,12 @@ public class ProcessOrderDetailClp extends BaseModelImpl<ProcessOrderDetail>
 	}
 
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{processDetailId=");
 		sb.append(getProcessDetailId());
+		sb.append(", processOrderId=");
+		sb.append(getProcessOrderId());
 		sb.append(", processDetailAmount=");
 		sb.append(getProcessDetailAmount());
 		sb.append(", bankCheck=");
@@ -155,7 +166,7 @@ public class ProcessOrderDetailClp extends BaseModelImpl<ProcessOrderDetail>
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("com.huenei.exolgan.services.model.ProcessOrderDetail");
@@ -164,6 +175,10 @@ public class ProcessOrderDetailClp extends BaseModelImpl<ProcessOrderDetail>
 		sb.append(
 			"<column><column-name>processDetailId</column-name><column-value><![CDATA[");
 		sb.append(getProcessDetailId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>processOrderId</column-name><column-value><![CDATA[");
+		sb.append(getProcessOrderId());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>processDetailAmount</column-name><column-value><![CDATA[");
@@ -184,6 +199,7 @@ public class ProcessOrderDetailClp extends BaseModelImpl<ProcessOrderDetail>
 	}
 
 	private long _processDetailId;
+	private long _processOrderId;
 	private long _processDetailAmount;
 	private String _bankCheck;
 	private String _bankCheckId;

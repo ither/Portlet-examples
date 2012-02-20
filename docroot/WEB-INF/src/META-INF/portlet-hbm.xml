@@ -44,6 +44,7 @@
 		<id name="processDetailId" type="long">
 			<generator class="assigned" />
 		</id>
+		<property name="processOrderId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="processDetailAmount" type="com.liferay.portal.dao.orm.hibernate.LongType" />
 		<property name="bankCheck" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="bankCheckId" type="com.liferay.portal.dao.orm.hibernate.StringType" />

@@ -2,11 +2,17 @@ package com.huenei.exolgan.portlets;
 
 import com.huenei.exolgan.services.model.ProcessOrder;
 import com.huenei.exolgan.services.model.impl.ProcessOrderImpl;
+import com.huenei.exolgan.util.OrderActionUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.servlet.SessionErrors;
+import com.liferay.portal.kernel.servlet.SessionMessages;
 import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.util.PortalUtil;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
@@ -41,7 +47,19 @@ public class ProcessOrderPortlet extends GenericPortlet
     @ProcessAction(name="processOrder")
     public void processTramite(ActionRequest request, ActionResponse response)
     {
-        _log.info(ParamUtil.getIntegerValues(request, "memberName"));
+        List<String> errors = new ArrayList<String>();
+        ProcessOrder processOrder = OrderActionUtil.processOrderFromRequest(request);
+        if (!OrderActionUtil.validateProcessOrder(processOrder, errors))
+        {
+            for (String err : errors)            
+                SessionErrors.add(request, err);
+            PortalUtil.copyRequestParameters(request, response);
+        }
+        else
+        {
+            // genera el PDF
+            SessionMessages.add(request, "order-ok");
+        }
     }
     
     protected void include(String path, RenderRequest renderRequest, RenderResponse renderResponse) throws IOException, PortletException

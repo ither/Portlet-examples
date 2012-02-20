@@ -196,6 +196,15 @@ public class ProcessOrderWrapper implements ProcessOrder {
 		return _processOrder.toXmlString();
 	}
 
+	public java.util.List<com.huenei.exolgan.services.model.ProcessOrderDetail> getProcessOrderDetails() {
+		return _processOrder.getProcessOrderDetails();
+	}
+
+	public void setProcessOrderDetails(
+		java.util.List<com.huenei.exolgan.services.model.ProcessOrderDetail> poDetails) {
+		_processOrder.setProcessOrderDetails(poDetails);
+	}
+
 	public ProcessOrder getWrappedProcessOrder() {
 		return _processOrder;
 	}

@@ -266,6 +266,7 @@ public class ProcessOrderDetailPersistenceImpl extends BasePersistenceImpl<Proce
 		processOrderDetailImpl.setPrimaryKey(processOrderDetail.getPrimaryKey());
 
 		processOrderDetailImpl.setProcessDetailId(processOrderDetail.getProcessDetailId());
+		processOrderDetailImpl.setProcessOrderId(processOrderDetail.getProcessOrderId());
 		processOrderDetailImpl.setProcessDetailAmount(processOrderDetail.getProcessDetailAmount());
 		processOrderDetailImpl.setBankCheck(processOrderDetail.getBankCheck());
 		processOrderDetailImpl.setBankCheckId(processOrderDetail.getBankCheckId());

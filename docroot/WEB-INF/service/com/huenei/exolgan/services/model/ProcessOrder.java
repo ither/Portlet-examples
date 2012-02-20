@@ -32,4 +32,8 @@ package com.huenei.exolgan.services.model;
  * @generated
  */
 public interface ProcessOrder extends ProcessOrderModel {
+	public java.util.List<com.huenei.exolgan.services.model.ProcessOrderDetail> getProcessOrderDetails();
+
+	public void setProcessOrderDetails(
+		java.util.List<com.huenei.exolgan.services.model.ProcessOrderDetail> poDetails);
 }

@@ -285,26 +285,33 @@ public class ClpSerializer {
 
 					method0.invoke(newModel, value0);
 
-					Method method1 = newModelClass.getMethod("setProcessDetailAmount",
+					Method method1 = newModelClass.getMethod("setProcessOrderId",
 							new Class[] { Long.TYPE });
 
-					Long value1 = new Long(oldCplModel.getProcessDetailAmount());
+					Long value1 = new Long(oldCplModel.getProcessOrderId());
 
 					method1.invoke(newModel, value1);
 
-					Method method2 = newModelClass.getMethod("setBankCheck",
-							new Class[] { String.class });
+					Method method2 = newModelClass.getMethod("setProcessDetailAmount",
+							new Class[] { Long.TYPE });
 
-					String value2 = oldCplModel.getBankCheck();
+					Long value2 = new Long(oldCplModel.getProcessDetailAmount());
 
 					method2.invoke(newModel, value2);
 
-					Method method3 = newModelClass.getMethod("setBankCheckId",
+					Method method3 = newModelClass.getMethod("setBankCheck",
 							new Class[] { String.class });
 
-					String value3 = oldCplModel.getBankCheckId();
+					String value3 = oldCplModel.getBankCheck();
 
 					method3.invoke(newModel, value3);
+
+					Method method4 = newModelClass.getMethod("setBankCheckId",
+							new Class[] { String.class });
+
+					String value4 = oldCplModel.getBankCheckId();
+
+					method4.invoke(newModel, value4);
 
 					return newModel;
 				}
@@ -575,25 +582,32 @@ public class ClpSerializer {
 					newModel.setProcessDetailId(value0);
 
 					Method method1 = oldModelClass.getMethod(
-							"getProcessDetailAmount");
+							"getProcessOrderId");
 
 					Long value1 = (Long)method1.invoke(oldModel, (Object[])null);
 
-					newModel.setProcessDetailAmount(value1);
+					newModel.setProcessOrderId(value1);
 
-					Method method2 = oldModelClass.getMethod("getBankCheck");
+					Method method2 = oldModelClass.getMethod(
+							"getProcessDetailAmount");
 
-					String value2 = (String)method2.invoke(oldModel,
-							(Object[])null);
+					Long value2 = (Long)method2.invoke(oldModel, (Object[])null);
 
-					newModel.setBankCheck(value2);
+					newModel.setProcessDetailAmount(value2);
 
-					Method method3 = oldModelClass.getMethod("getBankCheckId");
+					Method method3 = oldModelClass.getMethod("getBankCheck");
 
 					String value3 = (String)method3.invoke(oldModel,
 							(Object[])null);
 
-					newModel.setBankCheckId(value3);
+					newModel.setBankCheck(value3);
+
+					Method method4 = oldModelClass.getMethod("getBankCheckId");
+
+					String value4 = (String)method4.invoke(oldModel,
+							(Object[])null);
+
+					newModel.setBankCheckId(value4);
 
 					return newModel;
 				}

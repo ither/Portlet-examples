@@ -44,6 +44,14 @@ public class ProcessOrderDetailWrapper implements ProcessOrderDetail {
 		_processOrderDetail.setProcessDetailId(processDetailId);
 	}
 
+	public long getProcessOrderId() {
+		return _processOrderDetail.getProcessOrderId();
+	}
+
+	public void setProcessOrderId(long processOrderId) {
+		_processOrderDetail.setProcessOrderId(processOrderId);
+	}
+
 	public long getProcessDetailAmount() {
 		return _processOrderDetail.getProcessDetailAmount();
 	}

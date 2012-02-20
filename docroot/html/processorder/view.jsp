@@ -20,22 +20,27 @@
     <portlet:param name="redirect" value="redirectURL"/>
 </portlet:actionURL>
 
-<liferay-ui:success key="orderOk"    message="order-ok"/>
-<liferay-ui:error   key="orderError" message="order-error"/>
+<liferay-ui:success key="order-ok"    message="order-ok"/>
+<liferay-ui:error   key="order-error" message="order-error"/>
 
 
 <aui:form action="<%= postURL %>" method="post">
-    <aui:fieldset label="Datos de la empresa destino">              <!-- hay que meter estos campos en i18n  -->
+    
+    <aui:fieldset label="Datos de la empresa destino">                                  <!-- hay que meter estos campos en i18n  -->
+	    <liferay-ui:error key="company-name-empty" message="company-name-empty"/>
         <aui:input name="companyName"    type="text" size="50"/>
         <aui:input name="companyAddress" type="text" size="50"/>
+	    <liferay-ui:error key="company-contact-empty" message="company-contact-empty"/>
         <aui:input name="companyContact" type="text" size="50"/> 
     </aui:fieldset>
         
+    <liferay-ui:error key="po-descrip-empty" message="po-descrip-empty"/>
     <aui:fieldset label="Datos del tramite">
         <aui:input name="poDescrip" type="text" size="50"/>
         <aui:input name="poFailBy" type="text" size="50"/>
     </aui:fieldset>
         
+    <liferay-ui:error key="details-empty" message="details-empty"/>
 	<aui:fieldset id="cash-fields" label="Importes en efectivo">
 	    <div class="lfr-form-row lfr-form-row-inline">
 	        <div class="row-fields">
@@ -56,11 +61,11 @@
                     inlineLabel="left" size="20" />
                 <aui:input name="checkBankName"
                     fieldParam='checkField1'
-                    label="Banco del cheque" value="0" onFocus="this.select()"
+                    label="Banco del cheque" value="" onFocus="this.select()"
                     inlineLabel="left" size="40" />
                 <aui:input name="checkNumber"
                     fieldParam='checkField2'
-                    label="Nro del cheque" value="0" onFocus="this.select()"
+                    label="Nro del cheque" value="" onFocus="this.select()"
                     inlineLabel="left" size="40" />                    
             </div>
         </div>

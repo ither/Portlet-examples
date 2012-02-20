@@ -34,6 +34,7 @@
 	</model>
 	<model name="com.huenei.exolgan.services.model.ProcessOrderDetail">
 		<field name="processDetailId" type="long" />
+		<field name="processOrderId" type="long" />
 		<field name="processDetailAmount" type="long" />
 		<field name="bankCheck" type="String" />
 		<field name="bankCheckId" type="String" />

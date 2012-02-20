@@ -55,11 +55,12 @@ public class ProcessOrderDetailModelImpl extends BaseModelImpl<ProcessOrderDetai
 	public static final String TABLE_NAME = "EXO_ProcessOrderDetail";
 	public static final Object[][] TABLE_COLUMNS = {
 			{ "processDetailId", new Integer(Types.BIGINT) },
+			{ "processOrderId", new Integer(Types.BIGINT) },
 			{ "processDetailAmount", new Integer(Types.BIGINT) },
 			{ "bankCheck", new Integer(Types.VARCHAR) },
 			{ "bankCheckId", new Integer(Types.VARCHAR) }
 		};
-	public static final String TABLE_SQL_CREATE = "create table EXO_ProcessOrderDetail (processDetailId LONG not null primary key,processDetailAmount LONG,bankCheck VARCHAR(75) null,bankCheckId VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table EXO_ProcessOrderDetail (processDetailId LONG not null primary key,processOrderId LONG,processDetailAmount LONG,bankCheck VARCHAR(75) null,bankCheckId VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table EXO_ProcessOrderDetail";
 	public static final String DATA_SOURCE = "liferayDataSource";
 	public static final String SESSION_FACTORY = "liferaySessionFactory";
@@ -94,6 +95,14 @@ public class ProcessOrderDetailModelImpl extends BaseModelImpl<ProcessOrderDetai
 
 	public void setProcessDetailId(long processDetailId) {
 		_processDetailId = processDetailId;
+	}
+
+	public long getProcessOrderId() {
+		return _processOrderId;
+	}
+
+	public void setProcessOrderId(long processOrderId) {
+		_processOrderId = processOrderId;
 	}
 
 	public long getProcessDetailAmount() {
@@ -159,6 +168,8 @@ public class ProcessOrderDetailModelImpl extends BaseModelImpl<ProcessOrderDetai
 
 		processOrderDetailImpl.setProcessDetailId(getProcessDetailId());
 
+		processOrderDetailImpl.setProcessOrderId(getProcessOrderId());
+
 		processOrderDetailImpl.setProcessDetailAmount(getProcessDetailAmount());
 
 		processOrderDetailImpl.setBankCheck(getBankCheck());
@@ -211,10 +222,12 @@ public class ProcessOrderDetailModelImpl extends BaseModelImpl<ProcessOrderDetai
 	}
 
 	public String toString() {
-		StringBundler sb = new StringBundler(9);
+		StringBundler sb = new StringBundler(11);
 
 		sb.append("{processDetailId=");
 		sb.append(getProcessDetailId());
+		sb.append(", processOrderId=");
+		sb.append(getProcessOrderId());
 		sb.append(", processDetailAmount=");
 		sb.append(getProcessDetailAmount());
 		sb.append(", bankCheck=");
@@ -227,7 +240,7 @@ public class ProcessOrderDetailModelImpl extends BaseModelImpl<ProcessOrderDetai
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(16);
+		StringBundler sb = new StringBundler(19);
 
 		sb.append("<model><model-name>");
 		sb.append("com.huenei.exolgan.services.model.ProcessOrderDetail");
@@ -236,6 +249,10 @@ public class ProcessOrderDetailModelImpl extends BaseModelImpl<ProcessOrderDetai
 		sb.append(
 			"<column><column-name>processDetailId</column-name><column-value><![CDATA[");
 		sb.append(getProcessDetailId());
+		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>processOrderId</column-name><column-value><![CDATA[");
+		sb.append(getProcessOrderId());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>processDetailAmount</column-name><column-value><![CDATA[");
@@ -256,6 +273,7 @@ public class ProcessOrderDetailModelImpl extends BaseModelImpl<ProcessOrderDetai
 	}
 
 	private long _processDetailId;
+	private long _processOrderId;
 	private long _processDetailAmount;
 	private String _bankCheck;
 	private String _bankCheckId;

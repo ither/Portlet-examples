@@ -14,21 +14,44 @@
 
 package com.huenei.exolgan.services.model.impl;
 
+import java.util.List;
+
 import com.huenei.exolgan.services.model.ProcessOrder;
+import com.huenei.exolgan.services.model.ProcessOrderDetail;
 
 /**
- * The model implementation for the ProcessOrder service. Represents a row in the &quot;EXO_ProcessOrder&quot; database table, with each column mapped to a property of this class.
- *
+ * The model implementation for the ProcessOrder service. Represents a row in
+ * the &quot;EXO_ProcessOrder&quot; database table, with each column mapped to a
+ * property of this class.
+ * 
  * <p>
- * Helper methods and all application logic should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.huenei.exolgan.services.model.ProcessOrder} interface.
+ * Helper methods and all application logic should be put in this class.
+ * Whenever methods are added, rerun ServiceBuilder to copy their definitions
+ * into the {@link com.huenei.exolgan.services.model.ProcessOrder} interface.
  * </p>
- *
+ * 
  * <p>
- * Never reference this class directly. All methods that expect a Tramite model instance should use the {@link ProcessOrder} interface instead.
+ * Never reference this class directly. All methods that expect a Tramite model
+ * instance should use the {@link ProcessOrder} interface instead.
  * </p>
  */
-public class ProcessOrderImpl extends ProcessOrderModelImpl
-	implements ProcessOrder {
-	public ProcessOrderImpl() {
-	}
+public class ProcessOrderImpl extends ProcessOrderModelImpl implements ProcessOrder
+{
+    List<ProcessOrderDetail> poDetails;
+    
+    public ProcessOrderImpl()
+    {
+    }
+
+    public List<ProcessOrderDetail> getProcessOrderDetails()
+    {
+        return poDetails;
+    }
+
+    public void setProcessOrderDetails(List<ProcessOrderDetail> poDetails)
+    {
+        this.poDetails = poDetails;
+    }
+    
+
 }

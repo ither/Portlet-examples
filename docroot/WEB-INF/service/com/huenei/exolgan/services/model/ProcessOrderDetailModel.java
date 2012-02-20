@@ -69,6 +69,20 @@ public interface ProcessOrderDetailModel extends BaseModel<ProcessOrderDetail> {
 	public void setProcessDetailId(long processDetailId);
 
 	/**
+	 * Gets the process order id of this Tramite-Detalle.
+	 *
+	 * @return the process order id of this Tramite-Detalle
+	 */
+	public long getProcessOrderId();
+
+	/**
+	 * Sets the process order id of this Tramite-Detalle.
+	 *
+	 * @param processOrderId the process order id of this Tramite-Detalle
+	 */
+	public void setProcessOrderId(long processOrderId);
+
+	/**
 	 * Gets the process detail amount of this Tramite-Detalle.
 	 *
 	 * @return the process detail amount of this Tramite-Detalle

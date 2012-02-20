@@ -49,7 +49,7 @@
         <column name="processOrderFailedBy" type="String"/>
         <column name="details" 
                 type="Collection" 
-                mapping-key="processDetailId" 
+                mapping-key="processOrderId" 
                 entity="ProcessOrderDetail"/>
     </entity>
     
@@ -57,6 +57,8 @@
         <!-- PK fields -->    
         <column name="processDetailId" type="long" primary="true"/>
         <!-- FK fields -->        
+        <column name="processOrderId" type="long"/>
+        <!-- Other fields -->
         <column name="processDetailAmount" type="long"/>
         <column name="bankCheck" type="String"/>
         <column name="bankCheckId" type="String"/>

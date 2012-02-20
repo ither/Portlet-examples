@@ -142,6 +142,15 @@ public class ProcessOrderClp extends BaseModelImpl<ProcessOrder>
 		_processOrderFailedBy = processOrderFailedBy;
 	}
 
+	public java.util.List<com.huenei.exolgan.services.model.ProcessOrderDetail> getProcessOrderDetails() {
+		throw new UnsupportedOperationException();
+	}
+
+	public void setProcessOrderDetails(
+		java.util.List<com.huenei.exolgan.services.model.ProcessOrderDetail> poDetails) {
+		throw new UnsupportedOperationException();
+	}
+
 	public ProcessOrder toEscapedModel() {
 		if (isEscapedModel()) {
 			return this;

@@ -14,6 +14,7 @@ create table EXO_ProcessOrder (
 
 create table EXO_ProcessOrderDetail (
 	processDetailId LONG not null primary key,
+	processOrderId LONG,
 	processDetailAmount LONG,
 	bankCheck VARCHAR(75) null,
 	bankCheckId VARCHAR(75) null
