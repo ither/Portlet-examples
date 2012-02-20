@@ -126,12 +126,12 @@ public class ProcessOrderWrapper implements ProcessOrder {
 		_processOrder.setProcessOrderDescription(processOrderDescription);
 	}
 
-	public java.lang.String getProcessOrderFaliedBy() {
-		return _processOrder.getProcessOrderFaliedBy();
+	public java.lang.String getProcessOrderFailedBy() {
+		return _processOrder.getProcessOrderFailedBy();
 	}
 
-	public void setProcessOrderFaliedBy(java.lang.String processOrderFaliedBy) {
-		_processOrder.setProcessOrderFaliedBy(processOrderFaliedBy);
+	public void setProcessOrderFailedBy(java.lang.String processOrderFailedBy) {
+		_processOrder.setProcessOrderFailedBy(processOrderFailedBy);
 	}
 
 	public com.huenei.exolgan.services.model.ProcessOrder toEscapedModel() {

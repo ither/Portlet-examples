@@ -9,7 +9,7 @@ create table EXO_ProcessOrder (
 	companyAddress VARCHAR(75) null,
 	companyContact VARCHAR(75) null,
 	processOrderDescription VARCHAR(75) null,
-	processOrderFaliedBy VARCHAR(75) null
+	processOrderFailedBy VARCHAR(75) null
 );
 
 create table EXO_ProcessOrderDetail (

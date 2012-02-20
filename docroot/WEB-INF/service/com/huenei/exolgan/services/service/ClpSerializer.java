@@ -245,10 +245,10 @@ public class ClpSerializer {
 
 					method9.invoke(newModel, value9);
 
-					Method method10 = newModelClass.getMethod("setProcessOrderFaliedBy",
+					Method method10 = newModelClass.getMethod("setProcessOrderFailedBy",
 							new Class[] { String.class });
 
-					String value10 = oldCplModel.getProcessOrderFaliedBy();
+					String value10 = oldCplModel.getProcessOrderFailedBy();
 
 					method10.invoke(newModel, value10);
 
@@ -538,12 +538,12 @@ public class ClpSerializer {
 					newModel.setProcessOrderDescription(value9);
 
 					Method method10 = oldModelClass.getMethod(
-							"getProcessOrderFaliedBy");
+							"getProcessOrderFailedBy");
 
 					String value10 = (String)method10.invoke(oldModel,
 							(Object[])null);
 
-					newModel.setProcessOrderFaliedBy(value10);
+					newModel.setProcessOrderFailedBy(value10);
 
 					return newModel;
 				}

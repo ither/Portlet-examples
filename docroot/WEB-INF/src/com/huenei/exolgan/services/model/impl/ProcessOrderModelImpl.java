@@ -68,9 +68,9 @@ public class ProcessOrderModelImpl extends BaseModelImpl<ProcessOrder>
 			{ "companyAddress", new Integer(Types.VARCHAR) },
 			{ "companyContact", new Integer(Types.VARCHAR) },
 			{ "processOrderDescription", new Integer(Types.VARCHAR) },
-			{ "processOrderFaliedBy", new Integer(Types.VARCHAR) }
+			{ "processOrderFailedBy", new Integer(Types.VARCHAR) }
 		};
-	public static final String TABLE_SQL_CREATE = "create table EXO_ProcessOrder (processOrderId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,companyName VARCHAR(75) null,companyAddress VARCHAR(75) null,companyContact VARCHAR(75) null,processOrderDescription VARCHAR(75) null,processOrderFaliedBy VARCHAR(75) null)";
+	public static final String TABLE_SQL_CREATE = "create table EXO_ProcessOrder (processOrderId LONG not null primary key,companyId LONG,userId LONG,userName VARCHAR(75) null,createDate DATE null,modifiedDate DATE null,companyName VARCHAR(75) null,companyAddress VARCHAR(75) null,companyContact VARCHAR(75) null,processOrderDescription VARCHAR(75) null,processOrderFailedBy VARCHAR(75) null)";
 	public static final String TABLE_SQL_DROP = "drop table EXO_ProcessOrder";
 	public static final String DATA_SOURCE = "liferayDataSource";
 	public static final String SESSION_FACTORY = "liferaySessionFactory";
@@ -212,17 +212,17 @@ public class ProcessOrderModelImpl extends BaseModelImpl<ProcessOrder>
 		_processOrderDescription = processOrderDescription;
 	}
 
-	public String getProcessOrderFaliedBy() {
-		if (_processOrderFaliedBy == null) {
+	public String getProcessOrderFailedBy() {
+		if (_processOrderFailedBy == null) {
 			return StringPool.BLANK;
 		}
 		else {
-			return _processOrderFaliedBy;
+			return _processOrderFailedBy;
 		}
 	}
 
-	public void setProcessOrderFaliedBy(String processOrderFaliedBy) {
-		_processOrderFaliedBy = processOrderFaliedBy;
+	public void setProcessOrderFailedBy(String processOrderFailedBy) {
+		_processOrderFailedBy = processOrderFailedBy;
 	}
 
 	public ProcessOrder toEscapedModel() {
@@ -272,7 +272,7 @@ public class ProcessOrderModelImpl extends BaseModelImpl<ProcessOrder>
 
 		processOrderImpl.setProcessOrderDescription(getProcessOrderDescription());
 
-		processOrderImpl.setProcessOrderFaliedBy(getProcessOrderFaliedBy());
+		processOrderImpl.setProcessOrderFailedBy(getProcessOrderFailedBy());
 
 		return processOrderImpl;
 	}
@@ -342,8 +342,8 @@ public class ProcessOrderModelImpl extends BaseModelImpl<ProcessOrder>
 		sb.append(getCompanyContact());
 		sb.append(", processOrderDescription=");
 		sb.append(getProcessOrderDescription());
-		sb.append(", processOrderFaliedBy=");
-		sb.append(getProcessOrderFaliedBy());
+		sb.append(", processOrderFailedBy=");
+		sb.append(getProcessOrderFailedBy());
 		sb.append("}");
 
 		return sb.toString();
@@ -397,8 +397,8 @@ public class ProcessOrderModelImpl extends BaseModelImpl<ProcessOrder>
 		sb.append(getProcessOrderDescription());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>processOrderFaliedBy</column-name><column-value><![CDATA[");
-		sb.append(getProcessOrderFaliedBy());
+			"<column><column-name>processOrderFailedBy</column-name><column-value><![CDATA[");
+		sb.append(getProcessOrderFailedBy());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -417,6 +417,6 @@ public class ProcessOrderModelImpl extends BaseModelImpl<ProcessOrder>
 	private String _companyAddress;
 	private String _companyContact;
 	private String _processOrderDescription;
-	private String _processOrderFaliedBy;
+	private String _processOrderFailedBy;
 	private transient ExpandoBridge _expandoBridge;
 }

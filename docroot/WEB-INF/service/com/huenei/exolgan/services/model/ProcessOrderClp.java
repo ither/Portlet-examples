@@ -134,12 +134,12 @@ public class ProcessOrderClp extends BaseModelImpl<ProcessOrder>
 		_processOrderDescription = processOrderDescription;
 	}
 
-	public String getProcessOrderFaliedBy() {
-		return _processOrderFaliedBy;
+	public String getProcessOrderFailedBy() {
+		return _processOrderFailedBy;
 	}
 
-	public void setProcessOrderFaliedBy(String processOrderFaliedBy) {
-		_processOrderFaliedBy = processOrderFaliedBy;
+	public void setProcessOrderFailedBy(String processOrderFailedBy) {
+		_processOrderFailedBy = processOrderFailedBy;
 	}
 
 	public ProcessOrder toEscapedModel() {
@@ -166,7 +166,7 @@ public class ProcessOrderClp extends BaseModelImpl<ProcessOrder>
 		clone.setCompanyAddress(getCompanyAddress());
 		clone.setCompanyContact(getCompanyContact());
 		clone.setProcessOrderDescription(getProcessOrderDescription());
-		clone.setProcessOrderFaliedBy(getProcessOrderFaliedBy());
+		clone.setProcessOrderFailedBy(getProcessOrderFailedBy());
 
 		return clone;
 	}
@@ -236,8 +236,8 @@ public class ProcessOrderClp extends BaseModelImpl<ProcessOrder>
 		sb.append(getCompanyContact());
 		sb.append(", processOrderDescription=");
 		sb.append(getProcessOrderDescription());
-		sb.append(", processOrderFaliedBy=");
-		sb.append(getProcessOrderFaliedBy());
+		sb.append(", processOrderFailedBy=");
+		sb.append(getProcessOrderFailedBy());
 		sb.append("}");
 
 		return sb.toString();
@@ -291,8 +291,8 @@ public class ProcessOrderClp extends BaseModelImpl<ProcessOrder>
 		sb.append(getProcessOrderDescription());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>processOrderFaliedBy</column-name><column-value><![CDATA[");
-		sb.append(getProcessOrderFaliedBy());
+			"<column><column-name>processOrderFailedBy</column-name><column-value><![CDATA[");
+		sb.append(getProcessOrderFailedBy());
 		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
@@ -311,5 +311,5 @@ public class ProcessOrderClp extends BaseModelImpl<ProcessOrder>
 	private String _companyAddress;
 	private String _companyContact;
 	private String _processOrderDescription;
-	private String _processOrderFaliedBy;
+	private String _processOrderFailedBy;
 }

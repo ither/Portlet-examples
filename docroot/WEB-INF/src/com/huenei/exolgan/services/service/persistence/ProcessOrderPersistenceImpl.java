@@ -277,7 +277,7 @@ public class ProcessOrderPersistenceImpl extends BasePersistenceImpl<ProcessOrde
 		processOrderImpl.setCompanyAddress(processOrder.getCompanyAddress());
 		processOrderImpl.setCompanyContact(processOrder.getCompanyContact());
 		processOrderImpl.setProcessOrderDescription(processOrder.getProcessOrderDescription());
-		processOrderImpl.setProcessOrderFaliedBy(processOrder.getProcessOrderFaliedBy());
+		processOrderImpl.setProcessOrderFailedBy(processOrder.getProcessOrderFailedBy());
 
 		return processOrderImpl;
 	}

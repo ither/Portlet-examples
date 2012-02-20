@@ -46,7 +46,7 @@
         <column name="companyAddress" type="String"/>
         <column name="companyContact" type="String"/>
         <column name="processOrderDescription" type="String"/>
-        <column name="processOrderFaliedBy" type="String"/>
+        <column name="processOrderFailedBy" type="String"/>
         <column name="details" 
                 type="Collection" 
                 mapping-key="processDetailId" 

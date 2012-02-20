@@ -30,7 +30,7 @@
 		<field name="companyAddress" type="String" />
 		<field name="companyContact" type="String" />
 		<field name="processOrderDescription" type="String" />
-		<field name="processOrderFaliedBy" type="String" />
+		<field name="processOrderFailedBy" type="String" />
 	</model>
 	<model name="com.huenei.exolgan.services.model.ProcessOrderDetail">
 		<field name="processDetailId" type="long" />

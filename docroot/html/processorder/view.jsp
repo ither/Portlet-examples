@@ -31,13 +31,18 @@
         <aui:input name="companyContact" type="text" size="50"/> 
     </aui:fieldset>
         
+    <aui:fieldset label="Datos del tramite">
+        <aui:input name="poDescrip" type="text" size="50"/>
+        <aui:input name="poFailBy" type="text" size="50"/>
+    </aui:fieldset>
+        
 	<aui:fieldset id="cash-fields" label="Importes en efectivo">
 	    <div class="lfr-form-row lfr-form-row-inline">
 	        <div class="row-fields">
 	            <aui:input name="cashValue"
 	                fieldParam='cashField0'
 	                label="Valor en efectivo" value="0" onFocus="this.select()"
-	                inlineLabel="left" size="40" />
+	                inlineLabel="left" size="20"  />
 	        </div>
 	    </div>
 	</aui:fieldset>
@@ -48,7 +53,7 @@
                 <aui:input name="checkValue"
                     fieldParam='checkField0'
                     label="Monto del cheque" value="0" onFocus="this.select()"
-                    inlineLabel="left" size="40" />
+                    inlineLabel="left" size="20" />
                 <aui:input name="checkBankName"
                     fieldParam='checkField1'
                     label="Banco del cheque" value="0" onFocus="this.select()"

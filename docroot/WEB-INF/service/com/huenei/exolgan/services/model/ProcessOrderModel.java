@@ -218,19 +218,19 @@ public interface ProcessOrderModel extends BaseModel<ProcessOrder> {
 	public void setProcessOrderDescription(String processOrderDescription);
 
 	/**
-	 * Gets the process order falied by of this Tramite.
+	 * Gets the process order failed by of this Tramite.
 	 *
-	 * @return the process order falied by of this Tramite
+	 * @return the process order failed by of this Tramite
 	 */
 	@AutoEscape
-	public String getProcessOrderFaliedBy();
+	public String getProcessOrderFailedBy();
 
 	/**
-	 * Sets the process order falied by of this Tramite.
+	 * Sets the process order failed by of this Tramite.
 	 *
-	 * @param processOrderFaliedBy the process order falied by of this Tramite
+	 * @param processOrderFailedBy the process order failed by of this Tramite
 	 */
-	public void setProcessOrderFaliedBy(String processOrderFaliedBy);
+	public void setProcessOrderFailedBy(String processOrderFailedBy);
 
 	/**
 	 * Gets a copy of this Tramite as an escaped model instance by wrapping it with an {@link com.liferay.portal.kernel.bean.AutoEscapeBeanHandler}.

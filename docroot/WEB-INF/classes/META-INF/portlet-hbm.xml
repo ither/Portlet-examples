@@ -37,7 +37,7 @@
 		<property name="companyAddress" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="companyContact" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="processOrderDescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="processOrderFaliedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="processOrderFailedBy" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 	</class>
 	<class name="com.huenei.exolgan.services.model.impl.ProcessOrderDetailImpl" table="EXO_ProcessOrderDetail">
 		<cache usage="read-write" />
