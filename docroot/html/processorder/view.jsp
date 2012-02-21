@@ -15,21 +15,21 @@
 <div class="portlet-msg-info"><liferay-ui:message key="requires-login"/></div>
 <% } else { %> 
 
-<portlet:renderURL var="redirectURL"/>
+<portlet:renderURL var="redirectURL">
+    <portlet:param name="jspPage" value="/html/processorder/buildPDF.jsp"/>
+</portlet:renderURL>
 <portlet:actionURL name="processOrder" var="postURL">
-    <portlet:param name="redirect" value="redirectURL"/>
+    <portlet:param name="redirect" value="<%= redirectURL %>"/>
 </portlet:actionURL>
 
-<liferay-ui:success key="order-ok"    message="order-ok"/>
 <liferay-ui:error   key="order-error" message="order-error"/>
-
 
 <aui:form action="<%= postURL %>" method="post">
     
     <aui:fieldset label="Datos de la empresa destino">                                  <!-- hay que meter estos campos en i18n  -->
 	    <liferay-ui:error key="company-name-empty" message="company-name-empty"/>
-        <aui:input name="companyName"    type="text" size="50"/>
-        <aui:input name="companyAddress" type="text" size="50"/>
+        <aui:input name="companyName"    type="text" size="50" />
+        <aui:input name="companyAddress" type="text" size="50" />
 	    <liferay-ui:error key="company-contact-empty" message="company-contact-empty"/>
         <aui:input name="companyContact" type="text" size="50"/> 
     </aui:fieldset>
